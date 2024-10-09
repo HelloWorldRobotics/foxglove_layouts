@@ -1,0 +1,1463 @@
+{
+  "configById": {
+    "3D!28o2sum": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 18.049999999960608,
+        "phi": 64.76121657745776,
+        "thetaOffset": 93.38414479244355,
+        "targetOffset": [
+          2.48308893383207,
+          0.67552703474825,
+          3.394326699643037e-16
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "transforms": {
+          "axisScale": 6
+        }
+      },
+      "transforms": {
+        "frame:base_link": {
+          "visible": true
+        },
+        "frame:sensor_kit_base_link": {
+          "visible": false
+        },
+        "frame:camera0/camera_link": {
+          "visible": false
+        },
+        "frame:camera0/camera_optical_link": {
+          "visible": false
+        },
+        "frame:camera1/camera_link": {
+          "visible": false
+        },
+        "frame:camera1/camera_optical_link": {
+          "visible": false
+        },
+        "frame:camera2/camera_link": {
+          "visible": false
+        },
+        "frame:camera2/camera_optical_link": {
+          "visible": false
+        },
+        "frame:gnss_link": {
+          "visible": false
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:traffic_light_left_camera/camera_link": {
+          "visible": false
+        },
+        "frame:traffic_light_left_camera/camera_optical_link": {
+          "visible": false
+        },
+        "frame:traffic_light_right_camera/camera_link": {
+          "visible": false
+        },
+        "frame:traffic_light_right_camera/camera_optical_link": {
+          "visible": false
+        },
+        "frame:velodyne_left_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_left": {
+          "visible": false
+        },
+        "frame:velodyne_right_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_right": {
+          "visible": false
+        },
+        "frame:velodyne_top_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_top": {
+          "visible": false
+        },
+        "frame:map": {
+          "visible": false
+        },
+        "frame:ndt_base_link": {
+          "visible": false
+        },
+        "frame:viewer": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/sensing/lidar/concatenated/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/map/vector_map_marker": {
+          "visible": true
+        },
+        "/map/pointcloud_map": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/pointcloud": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "flat",
+          "colorMap": "turbo",
+          "pointSize": 1.5
+        },
+        "/perception/obstacle_segmentation/range_cropped/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/perception/obstacle_segmentation/single_frame/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/planning/debug/objects_of_interest/static_obstacle_avoidance_left": {
+          "visible": false
+        },
+        "/planning/debug/objects_of_interest/static_obstacle_avoidance_right": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/info/static_obstacle_avoidance": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/virtual_wall/static_obstacle_avoidance": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/debug_markers": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/virtual_walls": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/marker": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_avoidance_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_stop_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/surround_obstacle_checker/virtual_wall": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/crop_box_filter/crop_box_polygon": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/pointcloud_map_filtered/downsampled/pointcloud": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 3
+        },
+        "/control/trajectory_follower/controller_node_exe/output/debug_marker": {
+          "visible": false
+        },
+        "/control/trajectory_follower/longitudinal/stop_reason": {
+          "visible": true
+        },
+        "/control/trajectory_follower/lane_departure_checker_node/debug/marker_array": {
+          "visible": true
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/avoidance_by_lane_change": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/bound": {
+          "visible": true
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/goal_planner": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/lane_change_left": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/lane_change_right": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/root_reference_path": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/side_shift": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/start_planner": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/static_obstacle_avoidance": {
+          "visible": true,
+          "namespaces": {
+            "others_moving_object_cube": {
+              "visible": true
+            },
+            "others_moving_object_info": {
+              "visible": true
+            },
+            "others_moving_object_info_reason": {
+              "visible": true
+            },
+            "others_out_of_target_area_info": {
+              "visible": true
+            },
+            "others_out_of_target_area_cube": {
+              "visible": true
+            },
+            "others_moving_object_overhang_lanelet": {
+              "visible": true
+            },
+            "others_too_near_to_goal_overhang_lanelet": {
+              "visible": true
+            },
+            "others_unstable_object_info_reason": {
+              "visible": true
+            },
+            "others_unstable_object_cube": {
+              "visible": true
+            },
+            "others_unstable_object_info": {
+              "visible": true
+            },
+            "others_too_near_to_goal_info": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "layers": {
+        "grid": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "b54b02d8-dfed-4a90-afa2-2d0da2587732",
+          "layerId": "foxglove.Grid",
+          "size": 94.129,
+          "divisions": 16,
+          "color": "#ffffff33",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "lineWidth": 0.4
+        },
+        "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc": {
+          "visible": false,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc",
+          "layerId": "foxglove.Urdf",
+          "sourceType": "topic",
+          "url": "package://buggy_vehicle_description/urdf/vehicle.urdf",
+          "filePath": "/home/zawl/autoware.buggy/src/vehicle/buggy_vehicle_launch/buggy_vehicle_description/urdf/vehicle.urdf",
+          "parameter": "",
+          "topic": "/robot_description",
+          "framePrefix": "",
+          "displayMode": "auto",
+          "fallbackColor": "#ffffff",
+          "order": 1
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/initialpose",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {}
+    },
+    "3D!aihnty": {
+      "cameraState": {
+        "perspective": false,
+        "distance": 18.049999999965525,
+        "phi": 0.00005729577951308232,
+        "thetaOffset": 88.54708161989792,
+        "targetOffset": [
+          -2.81489055855812,
+          6.671085534521127,
+          1.0532895123500589e-16
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "transforms": {
+          "axisScale": 6
+        }
+      },
+      "transforms": {
+        "frame:base_link": {
+          "visible": true
+        },
+        "frame:sensor_kit_base_link": {
+          "visible": false
+        },
+        "frame:camera0/camera_link": {
+          "visible": false
+        },
+        "frame:camera0/camera_optical_link": {
+          "visible": false
+        },
+        "frame:camera1/camera_link": {
+          "visible": false
+        },
+        "frame:camera1/camera_optical_link": {
+          "visible": false
+        },
+        "frame:camera2/camera_link": {
+          "visible": false
+        },
+        "frame:camera2/camera_optical_link": {
+          "visible": false
+        },
+        "frame:gnss_link": {
+          "visible": false
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:traffic_light_left_camera/camera_link": {
+          "visible": false
+        },
+        "frame:traffic_light_left_camera/camera_optical_link": {
+          "visible": false
+        },
+        "frame:traffic_light_right_camera/camera_link": {
+          "visible": false
+        },
+        "frame:traffic_light_right_camera/camera_optical_link": {
+          "visible": false
+        },
+        "frame:velodyne_left_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_left": {
+          "visible": false
+        },
+        "frame:velodyne_right_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_right": {
+          "visible": false
+        },
+        "frame:velodyne_top_base_link": {
+          "visible": false
+        },
+        "frame:velodyne_top": {
+          "visible": false
+        },
+        "frame:map": {
+          "visible": false
+        },
+        "frame:ndt_base_link": {
+          "visible": false
+        },
+        "frame:viewer": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/sensing/lidar/concatenated/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/map/vector_map_marker": {
+          "visible": true
+        },
+        "/map/pointcloud_map": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/pointcloud": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "flat",
+          "colorMap": "turbo",
+          "pointSize": 1.5
+        },
+        "/perception/obstacle_segmentation/range_cropped/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/perception/obstacle_segmentation/single_frame/pointcloud": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/planning/debug/objects_of_interest/static_obstacle_avoidance_left": {
+          "visible": false
+        },
+        "/planning/debug/objects_of_interest/static_obstacle_avoidance_right": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/info/static_obstacle_avoidance": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/virtual_wall/static_obstacle_avoidance": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/debug_markers": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/virtual_walls": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/marker": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_avoidance_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_stop_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/virtual_wall": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/motion_planning/surround_obstacle_checker/virtual_wall": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/crop_box_filter/crop_box_polygon": {
+          "visible": false
+        },
+        "/perception/obstacle_segmentation/pointcloud_map_filtered/downsampled/pointcloud": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 3
+        },
+        "/control/trajectory_follower/controller_node_exe/output/debug_marker": {
+          "visible": false
+        },
+        "/control/trajectory_follower/longitudinal/stop_reason": {
+          "visible": true
+        },
+        "/control/trajectory_follower/lane_departure_checker_node/debug/marker_array": {
+          "visible": true
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/avoidance_by_lane_change": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/bound": {
+          "visible": true
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/goal_planner": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/lane_change_left": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/lane_change_right": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/root_reference_path": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/side_shift": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/start_planner": {
+          "visible": false
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/static_obstacle_avoidance": {
+          "visible": true,
+          "namespaces": {
+            "others_moving_object_cube": {
+              "visible": true
+            },
+            "others_moving_object_info": {
+              "visible": true
+            },
+            "others_moving_object_info_reason": {
+              "visible": true
+            },
+            "others_out_of_target_area_info": {
+              "visible": true
+            },
+            "others_out_of_target_area_cube": {
+              "visible": true
+            },
+            "others_moving_object_overhang_lanelet": {
+              "visible": true
+            },
+            "others_too_near_to_goal_overhang_lanelet": {
+              "visible": true
+            },
+            "others_unstable_object_info_reason": {
+              "visible": true
+            },
+            "others_unstable_object_cube": {
+              "visible": true
+            },
+            "others_unstable_object_info": {
+              "visible": true
+            },
+            "others_too_near_to_goal_info": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "layers": {
+        "grid": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "b54b02d8-dfed-4a90-afa2-2d0da2587732",
+          "layerId": "foxglove.Grid",
+          "size": 114.693,
+          "divisions": 216,
+          "lineWidth": 1,
+          "color": "#ffffff12",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc": {
+          "visible": false,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc",
+          "layerId": "foxglove.Urdf",
+          "sourceType": "topic",
+          "url": "package://buggy_vehicle_description/urdf/vehicle.urdf",
+          "filePath": "/home/zawl/autoware.buggy/src/vehicle/buggy_vehicle_launch/buggy_vehicle_description/urdf/vehicle.urdf",
+          "parameter": "",
+          "topic": "/robot_description",
+          "framePrefix": "",
+          "displayMode": "auto",
+          "fallbackColor": "#ffffff",
+          "order": 1
+        }
+      },
+      "publish": {
+        "type": "pose_estimate",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/goal_pose",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "foxglovePanelTitle": "2D"
+    },
+    "Indicator!dbhj64": {
+      "path": "/autoware/state.state",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "UNKNOWN",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#c825f6",
+          "label": "INITIALIZING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#00ffa1",
+          "label": "ROUTE?"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff6200",
+          "label": "PLANNING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#00d2ff",
+          "label": "ENGAGE?"
+        },
+        {
+          "operator": "=",
+          "rawValue": "5",
+          "color": "#ffcd00",
+          "label": "DRIVING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "6",
+          "color": "#00ff57",
+          "label": "ARRIVED"
+        },
+        {
+          "operator": "=",
+          "rawValue": "7",
+          "color": "#1d78d4",
+          "label": "FINALIZING"
+        }
+      ],
+      "foxglovePanelTitle": "AW STATE"
+    },
+    "Indicator!7vq6t6": {
+      "path": "/autoware/state.state",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "UNKNOWN",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#f52525",
+          "label": "STOP"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#00ffa1",
+          "label": "AUTO"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#fff500",
+          "label": "LOCAL"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#1d78d4",
+          "label": "REMOTE"
+        }
+      ],
+      "foxglovePanelTitle": "OP MODE"
+    },
+    "CallService!3y7sdej": {
+      "requestPayload": "{\"data\":true}",
+      "layout": "vertical",
+      "timeoutSeconds": 10,
+      "serviceName": "/setAuto",
+      "editingMode": false,
+      "foxglovePanelTitle": "",
+      "buttonText": "DRIVER AUTO",
+      "buttonTooltip": "",
+      "buttonColor": "#37bf3e"
+    },
+    "Indicator!2odgdqt": {
+      "path": "",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "CAN AUTO"
+    },
+    "CallService!3gux8iq": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "timeoutSeconds": 10,
+      "serviceName": "/api/operation_mode/change_to_autonomous",
+      "buttonText": "AW AUTO",
+      "buttonColor": "#37bf3e",
+      "editingMode": false
+    },
+    "CallService!2m7mx9d": {
+      "requestPayload": "{\"data\":false}",
+      "layout": "vertical",
+      "timeoutSeconds": 10,
+      "serviceName": "/setAuto",
+      "editingMode": false,
+      "foxglovePanelTitle": "",
+      "buttonText": "DRIVER MANUAL",
+      "buttonTooltip": "",
+      "buttonColor": "#bf3737"
+    },
+    "Indicator!yabbxe": {
+      "path": "",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "CAN AUTO"
+    },
+    "CallService!2wxe2xo": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "timeoutSeconds": 10,
+      "serviceName": "/api/operation_mode/change_to_stop",
+      "buttonText": "AW STOP",
+      "buttonColor": "#bf3737",
+      "editingMode": false
+    },
+    "Publish!3etoyrb": {
+      "buttonText": "INIT POSE LOBBY",
+      "buttonTooltip": "",
+      "advancedView": false,
+      "value": "{\n  \"header\": {\n    \"stamp\": {\n      \"sec\": 0,\n      \"nsec\": 0\n    },\n    \"frame_id\": \"map\"\n  },\n  \"pose\": {\n    \"pose\": {\n      \"position\": {\n        \"x\": 1.7212095260620117,\n        \"y\": 1.8913278579711914,\n        \"z\": 0\n      },\n      \"orientation\": {\n        \"x\": 0,\n        \"y\": 0,\n        \"z\": 0.9998760826999262,\n        \"w\": 0.015742275713835904\n      }\n    },\n    \"covariance\": [\n      0.25,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0.25,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0,\n      0.06853891909122467\n    ]\n  }\n}",
+      "topicName": "/initialpose",
+      "datatype": "geometry_msgs/msg/PoseWithCovarianceStamped"
+    },
+    "Indicator!1b8v1kz": {
+      "path": "",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "CAN AUTO"
+    },
+    "CallService!20iaugd": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "timeoutSeconds": 10,
+      "serviceName": "/api/operation_mode/change_to_local",
+      "buttonText": "LOCAL",
+      "buttonColor": "#f0ff00",
+      "editingMode": false
+    },
+    "Plot!4gyf28y": {
+      "paths": [
+        {
+          "timestampMethod": "headerStamp",
+          "value": "/ackermann_cmd.drive.speed",
+          "enabled": true,
+          "color": "#4e98e2",
+          "label": "TGT CMD",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/buggy_odom.twist.twist.linear.x",
+          "enabled": true,
+          "color": "#f5774d",
+          "label": "ENC SPEED"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/localization/kinematic_state",
+          "enabled": true,
+          "color": "#f7df71",
+          "label": "AW ODOM"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "VELOCITY",
+      "followingViewWidth": 20
+    },
+    "Plot!2juycvg": {
+      "paths": [
+        {
+          "timestampMethod": "headerStamp",
+          "value": "/ackermann_cmd.drive.speed",
+          "enabled": true,
+          "color": "#4e98e2",
+          "label": "TGT CMD",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/localization/kinematic_state",
+          "enabled": true,
+          "color": "#f7df71",
+          "label": "AW ODOM"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "ACCEL",
+      "followingViewWidth": 20
+    },
+    "Plot!46yzum": {
+      "paths": [
+        {
+          "timestampMethod": "headerStamp",
+          "value": "/ackermann_cmd.drive.speed",
+          "enabled": true,
+          "color": "#4e98e2",
+          "label": "TGT CMD",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/localization/kinematic_state",
+          "enabled": true,
+          "color": "#f7df71",
+          "label": "AW ODOM"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "STEERING",
+      "followingViewWidth": 20
+    },
+    "StateTransitions!3k0d69x": {
+      "paths": [
+        {
+          "value": "",
+          "timestampMethod": "receiveTime",
+          "label": "MRM STATE"
+        },
+        {
+          "value": "",
+          "timestampMethod": "receiveTime",
+          "label": "MRM BEHAVIOR"
+        }
+      ],
+      "isSynced": false,
+      "xAxisMinValue": 5,
+      "xAxisMaxValue": 5,
+      "showPoints": false
+    },
+    "DiagnosticSummary!3gy8ra6": {
+      "minLevel": 0,
+      "pinnedIds": [
+        "|concatenate_data_checker|concatenate_data: concat_status|",
+        "|emerge|cpu_monitor: CPU Usage|",
+        "|emerge|mem_monitor: Memory Usage|"
+      ],
+      "hardwareIdFilter": "",
+      "topicToRender": "/diagnostics",
+      "sortByLevel": false
+    },
+    "DiagnosticStatusPanel!3013pbj": {
+      "selectedHardwareId": "autonomous_emergency_braking",
+      "selectedName": "autonomous_emergency_braking: aeb_emergency_stop",
+      "topicToRender": "/diagnostics"
+    },
+    "RosOut!10elvad": {
+      "searchTerms": [],
+      "minLogLevel": 1,
+      "nameFilter": {
+        "ahrs_bringup": {
+          "visible": false
+        },
+        "system.topic_state_monitor_system_emergency_control_cmd": {
+          "visible": true
+        },
+        "system.topic_state_monitor_transform_map_to_base_link": {
+          "visible": true
+        },
+        "system.topic_state_monitor_control_command_control_cmd": {
+          "visible": true
+        },
+        "system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container": {
+          "visible": true
+        },
+        "system.topic_state_monitor_pointcloud_map": {
+          "visible": true
+        },
+        "system.topic_state_monitor_trajectory_follower_control_cmd": {
+          "visible": true
+        },
+        "system.system_monitor.system_monitor.system_monitor_container": {
+          "visible": true
+        },
+        "system.topic_state_monitor_obstacle_segmentation_pointcloud": {
+          "visible": true
+        },
+        "system.component_state_monitor.container": {
+          "visible": true
+        },
+        "system.topic_state_monitor_pose_twist_fusion_filter_pose": {
+          "visible": true
+        },
+        "system.topic_state_monitor_scenario_planning_trajectory": {
+          "visible": true
+        },
+        "system.topic_state_monitor_mission_planning_route": {
+          "visible": true
+        },
+        "robot_state_publisher": {
+          "visible": true
+        },
+        "sensing.lidar.top.distortion_corrector_node": {
+          "visible": true
+        },
+        "foxglove_bridge": {
+          "visible": false
+        },
+        "rosbridge_websocket": {
+          "visible": true
+        },
+        "buggy_odom_node": {
+          "visible": true
+        },
+        "rosboard": {
+          "visible": true
+        },
+        "pointcloud_container": {
+          "visible": true
+        },
+        "system.topic_state_monitor_vector_map": {
+          "visible": true
+        },
+        "system.topic_state_monitor_vehicle_status_velocity_status": {
+          "visible": true
+        },
+        "system.topic_state_monitor_object_recognition_objects": {
+          "visible": true
+        },
+        "system.topic_state_monitor_initialpose3d": {
+          "visible": true
+        },
+        "system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container": {
+          "visible": true
+        },
+        "map.map_container": {
+          "visible": true
+        },
+        "sensing.lidar.top.pointcloud_preprocessor.pointcloud_container": {
+          "visible": true
+        },
+        "system.mrm_handler": {
+          "visible": true
+        },
+        "sensing.imu.gyro_bias_validator": {
+          "visible": true
+        },
+        "perception.object_recognition.detection.clustering.shape_estimation": {
+          "visible": true
+        },
+        "sensing.lidar.left.pointcloud_preprocessor.pointcloud_container": {
+          "visible": true
+        },
+        "localization.pose_twist_fusion_filter.ekf_localizer": {
+          "visible": true
+        },
+        "sensing.lidar.right.pointcloud_preprocessor.pointcloud_container": {
+          "visible": true
+        },
+        "sensing.lidar.top.velodyne_hw_interface_ros_wrapper_node": {
+          "visible": true
+        },
+        "perception.object_recognition.tracking.multi_object_tracker": {
+          "visible": true
+        },
+        "sensing.lidar.left.velodyne_hw_interface_ros_wrapper_node": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera7.traffic_light_node_container": {
+          "visible": true
+        },
+        "sensing.lidar.right.velodyne_hw_interface_ros_wrapper_node": {
+          "visible": true
+        },
+        "planning.mission_planning.mission_planner_container": {
+          "visible": true
+        },
+        "system.topic_state_monitor_vehicle_status_steering_status": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container": {
+          "visible": true
+        },
+        "localization.twist_estimator.gyro_odometer": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.traffic_light_arbiter.container": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera6.traffic_light_node_container": {
+          "visible": true
+        },
+        "planning.scenario_planning.scenario_selector": {
+          "visible": true
+        },
+        "planning.scenario_planning.velocity_smoother_container": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.motion_planning.motion_planning_container": {
+          "visible": true
+        },
+        "planning.mission_planning.mission_planner": {
+          "visible": true
+        },
+        "planning.scenario_planning.parking.parking_container": {
+          "visible": true
+        },
+        "control.control_container": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera6.classification.car_traffic_light_classifier": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera7.classification.car_traffic_light_classifier": {
+          "visible": true
+        },
+        "control.control_validator_container": {
+          "visible": true
+        },
+        "control.trajectory_follower.controller_node_exe": {
+          "visible": true
+        },
+        "control.trajectory_follower.lane_departure_checker_node": {
+          "visible": true
+        },
+        "sensing.lidar.concatenate_data": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera6.classification.pedestrian_traffic_light_classifier": {
+          "visible": true
+        },
+        "planning.scenario_planning.parking.costmap_generator": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera7.classification.pedestrian_traffic_light_classifier": {
+          "visible": true
+        },
+        "rviz2": {
+          "visible": false
+        },
+        "system.system_monitor.net_monitor": {
+          "visible": false
+        },
+        "perception.object_recognition.detection.voxel_based_compare_map_filter": {
+          "visible": true
+        },
+        "map.lanelet2_map_loader": {
+          "visible": true
+        },
+        "map.lanelet2_map_visualization": {
+          "visible": true
+        },
+        "map.vector_map_tf_generator": {
+          "visible": true
+        },
+        "adapi.web_server": {
+          "visible": true
+        },
+        "perception.obstacle_segmentation.occupancy_grid_based_outlier_filter": {
+          "visible": true
+        },
+        "localization.util.pose_initializer": {
+          "visible": true
+        },
+        "system.service_log_checker": {
+          "visible": true
+        },
+        "system.system_monitor.gpu_monitor": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner": {
+          "visible": true
+        },
+        "control.autonomous_emergency_braking": {
+          "visible": true
+        },
+        "default_ad_api.helpers.initial_pose_adaptor": {
+          "visible": true
+        },
+        "localization.pose_estimator.ndt_scan_matcher": {
+          "visible": true
+        },
+        "rviz": {
+          "visible": false
+        },
+        "ackermann_publisher": {
+          "visible": true
+        },
+        "system.system_error_monitor": {
+          "visible": true
+        },
+        "perception.object_recognition.detection.clustering.euclidean_cluster_container": {
+          "visible": true
+        },
+        "system.emergency_handler": {
+          "visible": true
+        },
+        "sensing.imu.imu_corrector": {
+          "visible": true
+        },
+        "map.map_projection_loader": {
+          "visible": true
+        },
+        "sensing.imu.gyro_bias_estimator": {
+          "visible": true
+        },
+        "planning.scenario_planning.motion_velocity_smoother_container": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.motion_planning.obstacle_avoidance_planner": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.traffic_light_map_visualizer": {
+          "visible": true
+        },
+        "perception.object_recognition.prediction.map_based_prediction": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.crosswalk_traffic_light_estimator": {
+          "visible": true
+        },
+        "perception.object_recognition.tracking.radar_object_tracker": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.motion_planning.elastic_band_smoother": {
+          "visible": true
+        },
+        "perception.traffic_light_recognition.camera6.classification.traffic_light_classifier": {
+          "visible": true
+        },
+        "perception.object_recognition.detection.voxel_grid_downsample_filter": {
+          "visible": true
+        },
+        "perception.object_recognition.detection.clustering.low_height_crop_box_filter": {
+          "visible": true
+        },
+        "map.pointcloud_map_loader": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner": {
+          "visible": true
+        },
+        "default_ad_api.node.operation_mode": {
+          "visible": true
+        },
+        "control.control_validator": {
+          "visible": true
+        },
+        "sensing.lidar.top.velodyne_driver_ros_wrapper_node": {
+          "visible": true
+        },
+        "sensing.lidar.right.velodyne_driver_ros_wrapper_node": {
+          "visible": true
+        },
+        "localization.util.default_ad_api.helpers.automatic_pose_initializer": {
+          "visible": true
+        },
+        "default_ad_api.node.localization": {
+          "visible": true
+        },
+        "localization.util.pose_initializer_node": {
+          "visible": true
+        },
+        "localization.util.crop_box_filter_measurement_range": {
+          "visible": true
+        },
+        "sensing.lidar.left.velodyne_driver_ros_wrapper_node": {
+          "visible": true
+        },
+        "perception.obstacle_segmentation.crop_box_filter": {
+          "visible": true
+        },
+        "sensing.lidar.top.crop_box_filter_self": {
+          "visible": true
+        },
+        "sensing.lidar.right.crop_box_filter_self": {
+          "visible": true
+        },
+        "localization.util.voxel_grid_downsample_filter": {
+          "visible": true
+        },
+        "sensing.lidar.left.crop_box_filter_self": {
+          "visible": true
+        },
+        "perception.obstacle_segmentation.common_ground_filter": {
+          "visible": true
+        },
+        "sensing.lidar.top.crop_box_filter_mirror": {
+          "visible": true
+        },
+        "sensing.lidar.right.crop_box_filter_mirror": {
+          "visible": true
+        },
+        "localization.util.random_downsample_filter": {
+          "visible": true
+        },
+        "sensing.lidar.left.crop_box_filter_mirror": {
+          "visible": true
+        },
+        "sensing.lidar.top.ring_outlier_filter": {
+          "visible": true
+        },
+        "sensing.lidar.right.ring_outlier_filter": {
+          "visible": true
+        },
+        "sensing.lidar.left.ring_outlier_filter": {
+          "visible": true
+        },
+        "sensing.lidar.right.distortion_corrector_node": {
+          "visible": true
+        },
+        "perception.occupancy_grid_map.occupancy_grid_map_node": {
+          "visible": true
+        },
+        "sensing.lidar.left.distortion_corrector_node": {
+          "visible": true
+        },
+        "planning.scenario_planning.motion_velocity_smoother": {
+          "visible": true
+        },
+        "planning.scenario_planning.lane_driving.motion_planning.obstacle_stop_planner": {
+          "visible": true
+        },
+        "default_ad_api.node.routing": {
+          "visible": true
+        },
+        "default_ad_api.helpers.routing_adaptor": {
+          "visible": true
+        },
+        "planning.scenario_planning.parking.freespace_planner": {
+          "visible": true
+        },
+        "control.vehicle_cmd_gate": {
+          "visible": true
+        },
+        "default_ad_api.node.motion": {
+          "visible": true
+        },
+        "control.operation_mode_transition_manager": {
+          "visible": true
+        },
+        "camera1": {
+          "visible": true
+        }
+      }
+    },
+    "Indicator!273cods": {
+      "path": "/autoware/state.state",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "INVALID",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#e34b7c",
+          "label": "INITIALIZING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#403882",
+          "label": "WAITING_FOR_ROUTE"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#12c7c4",
+          "label": "PLANNING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#ff9c01",
+          "label": "WAITING_FOR_ENGAGE"
+        },
+        {
+          "operator": "=",
+          "rawValue": "5",
+          "color": "#f0ff00",
+          "label": "DRIVING"
+        },
+        {
+          "operator": "=",
+          "rawValue": "6",
+          "color": "#03ff31",
+          "label": "ARRIVED_GOAL"
+        },
+        {
+          "operator": "=",
+          "rawValue": "7",
+          "color": "#511e39",
+          "label": "Label"
+        }
+      ],
+      "foxglovePanelTitle": "WAITING FOR ROUTE"
+    }
+  },
+  "globalVariables": {
+    "": ""
+  },
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": {
+      "first": {
+        "first": {
+          "first": "3D!28o2sum",
+          "second": {
+            "first": "3D!aihnty",
+            "second": {
+              "first": "Indicator!dbhj64",
+              "second": "Indicator!7vq6t6",
+              "direction": "row"
+            },
+            "direction": "column",
+            "splitPercentage": 78.54581676892178
+          },
+          "direction": "column",
+          "splitPercentage": 46.48829411932064
+        },
+        "second": {
+          "first": {
+            "first": "CallService!3y7sdej",
+            "second": {
+              "first": "Indicator!2odgdqt",
+              "second": "CallService!3gux8iq",
+              "direction": "row",
+              "splitPercentage": 3.2262227384178597
+            },
+            "direction": "column"
+          },
+          "second": {
+            "first": {
+              "first": "CallService!2m7mx9d",
+              "second": {
+                "first": "Indicator!yabbxe",
+                "second": "CallService!2wxe2xo",
+                "direction": "row",
+                "splitPercentage": 4.360145830449029
+              },
+              "direction": "column"
+            },
+            "second": {
+              "first": "Publish!3etoyrb",
+              "second": {
+                "first": "Indicator!1b8v1kz",
+                "second": "CallService!20iaugd",
+                "direction": "row",
+                "splitPercentage": 4.519362923437665
+              },
+              "direction": "column"
+            },
+            "direction": "row",
+            "splitPercentage": 49.322607959356475
+          },
+          "direction": "row",
+          "splitPercentage": 32.362419320938116
+        },
+        "direction": "column",
+        "splitPercentage": 82.75998088578805
+      },
+      "second": {
+        "first": {
+          "first": "Plot!4gyf28y",
+          "second": {
+            "first": "Plot!2juycvg",
+            "second": {
+              "first": "Plot!46yzum",
+              "second": "StateTransitions!3k0d69x",
+              "direction": "column",
+              "splitPercentage": 52.76872964169379
+            },
+            "direction": "column",
+            "splitPercentage": 31.319910514541387
+          },
+          "direction": "column",
+          "splitPercentage": 26.043317187403748
+        },
+        "second": {
+          "first": "DiagnosticSummary!3gy8ra6",
+          "second": {
+            "first": "DiagnosticStatusPanel!3013pbj",
+            "second": "RosOut!10elvad",
+            "direction": "column"
+          },
+          "direction": "column",
+          "splitPercentage": 34.71727799865513
+        },
+        "direction": "row",
+        "splitPercentage": 57.438866820114995
+      },
+      "direction": "row",
+      "splitPercentage": 57.62217103065046
+    },
+    "second": "Indicator!273cods",
+    "direction": "column",
+    "splitPercentage": 100
+  }
+}
