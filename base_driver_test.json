@@ -1,8 +1,17 @@
 {
   "configById": {
+    "Publish!3v03vsz": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"data\": 0\n}",
+      "topicName": "/velocity_mul",
+      "datatype": "std_msgs/msg/Float32",
+      "foxglovePanelTitle": "ADJUST VEL_MUL"
+    },
     "3D!28o2sum": {
       "cameraState": {
-        "distance": 133.43095671439386,
+        "distance": 50.3506522059018,
         "perspective": false,
         "phi": 55.176363493962846,
         "target": [
@@ -11,9 +20,9 @@
           0
         ],
         "targetOffset": [
-          30.144814209349896,
-          -10.283522859941007,
-          2.0433561363773592e-14
+          -1.19471359301833,
+          1.0312716205180836,
+          1.9373205792026027e-14
         ],
         "targetOrientation": [
           0,
@@ -21,7 +30,7 @@
           0,
           1
         ],
-        "thetaOffset": 57.66864821558835,
+        "thetaOffset": 49.04203459864545,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -1022,6 +1031,50 @@
       },
       "imageMode": {}
     },
+    "Image!i3hs1y": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/mavec/compressed"
+      }
+    },
     "RosOut!4kjwvdj": {
       "searchTerms": [],
       "minLogLevel": 1,
@@ -1508,6 +1561,33 @@
       ],
       "foxglovePanelTitle": "OP MODE"
     },
+    "Indicator!4hrqyj8": {
+      "path": "/driver_status.data",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "UNKNOWN",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#f52525",
+          "label": "MANUAL"
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ffa1",
+          "label": "AUTO"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#1d78d4",
+          "label": "REMOTE"
+        }
+      ],
+      "foxglovePanelTitle": "DRIVER STATE"
+    },
     "CallService!3y7sdej": {
       "requestPayload": "{\"data\":true}",
       "layout": "vertical",
@@ -1624,7 +1704,7 @@
     "Plot!4gyf28y": {
       "paths": [
         {
-          "timestampMethod": "headerStamp",
+          "timestampMethod": "receiveTime",
           "value": "/ackermann_cmd.drive.speed",
           "enabled": true,
           "color": "#4e98e2",
@@ -1641,13 +1721,80 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
+      "showLegend": true,
+      "legendDisplay": "left",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
       "foxglovePanelTitle": "VELOCITY",
+      "followingViewWidth": 20
+    },
+    "Publish!1mafhzi": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"data\": 1.4\n}",
+      "topicName": "/velocity_mul",
+      "datatype": "std_msgs/msg/Float32",
+      "foxglovePanelTitle": "VELMUL"
+    },
+    "Indicator!30lplty": {
+      "path": "/base_driver_debug.data[7:7]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "ISLIMITED"
+    },
+    "RawMessages!2638osp": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/base_driver_debug.data[6:8]"
+    },
+    "Plot!3179n3r": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/base_driver_debug.data[3:3]",
+          "enabled": true,
+          "color": "#4e98e2",
+          "label": "PREV_VEL",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/base_driver_debug.data[5:5]",
+          "enabled": true,
+          "color": "#f5774d",
+          "label": "PUB_VEL"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/base_driver_debug.data[4:4]",
+          "enabled": true,
+          "color": "#f7df71",
+          "label": "DEL_VEL"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "left",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "BASE_VALUES",
       "followingViewWidth": 20
     },
     "Plot!2juycvg": {
@@ -1659,12 +1806,19 @@
           "color": "#4e98e2",
           "label": "CMD",
           "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/localization/acceleration.accel.accel.linear.x",
+          "enabled": true,
+          "color": "#f5774d",
+          "label": "AW ACC"
         }
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
+      "showLegend": true,
+      "legendDisplay": "left",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
@@ -2181,117 +2335,151 @@
     }
   },
   "globalVariables": {
-    "": ""
+    "velmul": 1.8,
+    "globalVariable": 1.7
   },
   "userNodes": {},
   "playbackConfig": {
     "speed": 1
   },
   "layout": {
-    "first": {
+    "direction": "row",
+    "first": "Publish!3v03vsz",
+    "second": {
       "first": {
         "first": {
           "first": {
-            "first": "3D!28o2sum",
-            "second": "RosOut!4kjwvdj",
-            "direction": "row",
-            "splitPercentage": 55.98662940435093
-          },
-          "second": {
-            "first": "Indicator!dbhj64",
-            "second": "Indicator!7vq6t6",
-            "direction": "row",
-            "splitPercentage": 49.15611814345992
-          },
-          "direction": "column",
-          "splitPercentage": 81.12310342733991
-        },
-        "second": {
-          "first": {
-            "first": "CallService!3y7sdej",
-            "second": {
-              "first": "Indicator!2odgdqt",
-              "second": "CallService!3gux8iq",
+            "first": {
+              "first": "3D!28o2sum",
+              "second": {
+                "first": "Image!i3hs1y",
+                "second": "RosOut!4kjwvdj",
+                "direction": "column"
+              },
               "direction": "row",
-              "splitPercentage": 7.410422665208344
+              "splitPercentage": 55.98662940435093
             },
-            "direction": "column"
+            "second": {
+              "first": "Indicator!dbhj64",
+              "second": {
+                "first": "Indicator!7vq6t6",
+                "second": "Indicator!4hrqyj8",
+                "direction": "row"
+              },
+              "direction": "row",
+              "splitPercentage": 33.16435036771729
+            },
+            "direction": "column",
+            "splitPercentage": 89.80049817109925
           },
           "second": {
             "first": {
-              "first": "CallService!2m7mx9d",
+              "first": "CallService!3y7sdej",
               "second": {
-                "first": "Indicator!yabbxe",
-                "second": "CallService!2wxe2xo",
+                "first": "Indicator!2odgdqt",
+                "second": "CallService!3gux8iq",
                 "direction": "row",
-                "splitPercentage": 5.123737810736953
+                "splitPercentage": 7.410422665208344
               },
               "direction": "column"
             },
             "second": {
               "first": {
-                "first": "Publish!3etoyrb",
-                "second": "CallService!7et53w",
-                "direction": "row"
+                "first": "CallService!2m7mx9d",
+                "second": {
+                  "first": "Indicator!yabbxe",
+                  "second": "CallService!2wxe2xo",
+                  "direction": "row",
+                  "splitPercentage": 5.123737810736953
+                },
+                "direction": "column"
               },
               "second": {
-                "first": "Indicator!1b8v1kz",
-                "second": "CallService!20iaugd",
-                "direction": "row",
-                "splitPercentage": 4.907159573330879
+                "first": {
+                  "first": "Publish!3etoyrb",
+                  "second": "CallService!7et53w",
+                  "direction": "row"
+                },
+                "second": {
+                  "first": "Indicator!1b8v1kz",
+                  "second": "CallService!20iaugd",
+                  "direction": "row",
+                  "splitPercentage": 4.907159573330879
+                },
+                "direction": "column"
               },
-              "direction": "column"
+              "direction": "row",
+              "splitPercentage": 49.322607959356475
             },
             "direction": "row",
-            "splitPercentage": 49.322607959356475
-          },
-          "direction": "row",
-          "splitPercentage": 32.362419320938116
-        },
-        "direction": "column",
-        "splitPercentage": 74.20634920634922
-      },
-      "second": {
-        "first": {
-          "first": "Plot!4gyf28y",
-          "second": {
-            "first": "Plot!2juycvg",
-            "second": {
-              "first": "Plot!46yzum",
-              "second": "StateTransitions!3k0d69x",
-              "direction": "column",
-              "splitPercentage": 52.76872964169379
-            },
-            "direction": "column",
-            "splitPercentage": 31.319910514541387
+            "splitPercentage": 32.362419320938116
           },
           "direction": "column",
-          "splitPercentage": 37.301587301587304
+          "splitPercentage": 80.17371776032188
         },
         "second": {
           "first": {
+            "first": {
+              "first": "Plot!4gyf28y",
+              "second": {
+                "first": {
+                  "first": {
+                    "first": "Publish!1mafhzi",
+                    "second": "Indicator!30lplty",
+                    "direction": "row",
+                    "splitPercentage": 93.82640404387517
+                  },
+                  "second": "RawMessages!2638osp",
+                  "direction": "row",
+                  "splitPercentage": 59.184556094621435
+                },
+                "second": "Plot!3179n3r",
+                "direction": "column",
+                "splitPercentage": 50.11922779711365
+              },
+              "direction": "column",
+              "splitPercentage": 43.25753509569668
+            },
+            "second": {
+              "first": "Plot!2juycvg",
+              "second": {
+                "first": "Plot!46yzum",
+                "second": "StateTransitions!3k0d69x",
+                "direction": "column",
+                "splitPercentage": 52.76872964169379
+              },
+              "direction": "column",
+              "splitPercentage": 31.319910514541387
+            },
             "direction": "column",
-            "second": "DiagnosticStatusPanel!39lovil",
-            "first": "DiagnosticSummary!3gy8ra6",
-            "splitPercentage": 49.493886784043816
+            "splitPercentage": 47.59696585408895
           },
           "second": {
-            "first": "DiagnosticStatusPanel!3013pbj",
-            "second": "RosOut!10elvad",
+            "first": {
+              "direction": "column",
+              "second": "DiagnosticStatusPanel!39lovil",
+              "first": "DiagnosticSummary!3gy8ra6",
+              "splitPercentage": 49.493886784043816
+            },
+            "second": {
+              "first": "DiagnosticStatusPanel!3013pbj",
+              "second": "RosOut!10elvad",
+              "direction": "column",
+              "splitPercentage": 34.29346872392404
+            },
             "direction": "column",
-            "splitPercentage": 34.29346872392404
+            "splitPercentage": 48.950570503932425
           },
-          "direction": "column",
-          "splitPercentage": 48.950570503932425
+          "direction": "row",
+          "splitPercentage": 65.81083609057447
         },
         "direction": "row",
-        "splitPercentage": 59.6334554688681
+        "splitPercentage": 51.43638472844153
       },
-      "direction": "row",
-      "splitPercentage": 71.25
+      "second": "Indicator!273cods",
+      "direction": "column",
+      "splitPercentage": 100
     },
-    "second": "Indicator!273cods",
-    "direction": "column",
-    "splitPercentage": 100
+    "splitPercentage": 0
   }
 }
