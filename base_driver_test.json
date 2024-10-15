@@ -1,10 +1,5 @@
 {
   "configById": {
-    "RosOut!3acareq": {
-      "searchTerms": [],
-      "minLogLevel": 1,
-      "nameFilter": {}
-    },
     "3D!28o2sum": {
       "cameraState": {
         "perspective": false,
@@ -2314,15 +2309,12 @@
       "datatype": "std_msgs/Float32MultiArray",
       "foxglovePanelTitle": "CLAMP SETTINGS"
     },
-    "DiagnosticStatusPanel!3013pbj": {
-      "selectedHardwareId": "autoware_pid_longitudinal_controller",
-      "selectedName": "controller_node_exe: MPC_solve_checker",
-      "topicToRender": "/diagnostics"
-    },
-    "DiagnosticStatusPanel!39lovil": {
-      "selectedHardwareId": "emerge",
-      "selectedName": "cpu_monitor: CPU Usage",
-      "topicToRender": "/diagnostics"
+    "RawMessages!2638osp": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/base_driver_debug.data[:]"
     },
     "Plot!4gyf28y": {
       "paths": [
@@ -2422,6 +2414,66 @@
       "topicToRender": "/diagnostics",
       "sortByLevel": false
     },
+    "Indicator!3m9asr3": {
+      "path": "/base_driver_debug.data[12:12]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#f52525",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "DT CLMP F"
+    },
+    "Indicator!2jw01vk": {
+      "path": "/base_driver_debug.data[13:13]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#f52525",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "DT CLMP B"
+    },
+    "Indicator!111s9hq": {
+      "path": "/base_driver_debug.data[14:14]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#f52525",
+          "label": "MANUAL"
+        }
+      ],
+      "foxglovePanelTitle": "VX LIMIT"
+    },
+    "Indicator!qggctr": {
+      "path": "/base_driver_debug.data[15:15]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#f52525",
+          "label": "MANUAL"
+        }
+      ],
+      "foxglovePanelTitle": "FLIP STOP"
+    },
     "Plot!3179n3r": {
       "paths": [
         {
@@ -2457,7 +2509,7 @@
           "timestampMethod": "receiveTime",
           "value": "/base_driver_debug.data[4:4]",
           "enabled": true,
-          "color": "#f7df71",
+          "color": "#00ff90",
           "label": "DEL"
         }
       ],
@@ -2469,7 +2521,7 @@
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 390.5,
-      "foxglovePanelTitle": "BASE_FEEDBACK_DEL",
+      "foxglovePanelTitle": "DELTA VEL",
       "followingViewWidth": 20
     },
     "Plot!46r9ua3": {
@@ -2478,15 +2530,8 @@
           "timestampMethod": "receiveTime",
           "value": "/base_driver_debug.data[9:9]",
           "enabled": true,
-          "color": "#f7df71",
-          "label": "CURR"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/base_driver_debug.data[10:10]",
-          "enabled": true,
-          "color": "#f5774d",
-          "label": "PREV"
+          "color": "#ff00bd",
+          "label": "CMD"
         }
       ],
       "showXAxisLabels": true,
@@ -2497,14 +2542,14 @@
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 390.5,
-      "foxglovePanelTitle": "TIME",
+      "foxglovePanelTitle": "SPEED CMD",
       "followingViewWidth": 20
     },
     "Plot!tptibz": {
       "paths": [
         {
           "timestampMethod": "receiveTime",
-          "value": "/base_driver_debug.data[8:8]",
+          "value": "/base_driver_debug.data[7:7]",
           "enabled": true,
           "color": "#f7df71",
           "label": "DT"
@@ -2520,13 +2565,6 @@
       "sidebarDimension": 390.5,
       "foxglovePanelTitle": "DT",
       "followingViewWidth": 20
-    },
-    "RawMessages!2638osp": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/base_driver_debug.data[:]"
     },
     "Indicator!273cods": {
       "path": "/autoware/state.state",
@@ -2589,137 +2627,142 @@
     "speed": 1
   },
   "layout": {
-    "direction": "row",
-    "first": "RosOut!3acareq",
-    "second": {
+    "first": {
       "first": {
         "first": {
           "first": {
-            "first": {
-              "first": "3D!28o2sum",
-              "second": "3D!3s9p6od",
-              "direction": "column",
-              "splitPercentage": 57.395267528251225
-            },
-            "second": {
-              "first": "Indicator!dbhj64",
-              "second": {
-                "first": "Indicator!7vq6t6",
-                "second": "Indicator!4hrqyj8",
-                "direction": "row"
-              },
-              "direction": "row",
-              "splitPercentage": 33.16435036771729
-            },
+            "first": "3D!28o2sum",
+            "second": "3D!3s9p6od",
             "direction": "column",
-            "splitPercentage": 86.53161784834383
+            "splitPercentage": 57.395267528251225
+          },
+          "second": {
+            "first": "Indicator!dbhj64",
+            "second": {
+              "first": "Indicator!7vq6t6",
+              "second": "Indicator!4hrqyj8",
+              "direction": "row"
+            },
+            "direction": "row",
+            "splitPercentage": 33.16435036771729
+          },
+          "direction": "column",
+          "splitPercentage": 90.91136479413477
+        },
+        "second": {
+          "first": {
+            "first": "CallService!3y7sdej",
+            "second": {
+              "first": "Indicator!2odgdqt",
+              "second": "CallService!3gux8iq",
+              "direction": "row",
+              "splitPercentage": 7.410422665208344
+            },
+            "direction": "column"
           },
           "second": {
             "first": {
-              "first": "CallService!3y7sdej",
+              "first": "CallService!2m7mx9d",
               "second": {
-                "first": "Indicator!2odgdqt",
-                "second": "CallService!3gux8iq",
+                "first": "Indicator!yabbxe",
+                "second": "CallService!2wxe2xo",
                 "direction": "row",
-                "splitPercentage": 7.410422665208344
+                "splitPercentage": 6.844432487613542
               },
               "direction": "column"
             },
             "second": {
               "first": {
-                "first": "CallService!2m7mx9d",
-                "second": {
-                  "first": "Indicator!yabbxe",
-                  "second": "CallService!2wxe2xo",
-                  "direction": "row",
-                  "splitPercentage": 5.123737810736953
-                },
-                "direction": "column"
+                "first": "Publish!3etoyrb",
+                "second": "CallService!7et53w",
+                "direction": "row"
               },
               "second": {
-                "first": {
-                  "first": "Publish!3etoyrb",
-                  "second": "CallService!7et53w",
-                  "direction": "row"
-                },
-                "second": {
-                  "first": "Indicator!1b8v1kz",
-                  "second": "CallService!20iaugd",
-                  "direction": "row",
-                  "splitPercentage": 4.907159573330879
-                },
-                "direction": "column"
+                "first": "Indicator!1b8v1kz",
+                "second": "CallService!20iaugd",
+                "direction": "row",
+                "splitPercentage": 4.907159573330879
               },
-              "direction": "row",
-              "splitPercentage": 49.322607959356475
+              "direction": "column"
             },
             "direction": "row",
-            "splitPercentage": 32.362419320938116
+            "splitPercentage": 49.322607959356475
+          },
+          "direction": "row",
+          "splitPercentage": 32.362419320938116
+        },
+        "direction": "column",
+        "splitPercentage": 74.71264367816092
+      },
+      "second": {
+        "first": {
+          "first": {
+            "first": {
+              "first": "Publish!20aqwwv",
+              "second": "RawMessages!2638osp",
+              "direction": "column",
+              "splitPercentage": 38.45388903402488
+            },
+            "second": "Plot!4gyf28y",
+            "direction": "column",
+            "splitPercentage": 64.29980276134121
+          },
+          "second": {
+            "first": "Plot!2juycvg",
+            "second": "Plot!46yzum",
+            "direction": "column",
+            "splitPercentage": 51.23966942148761
           },
           "direction": "column",
-          "splitPercentage": 74.71264367816092
+          "splitPercentage": 58.27586206896552
         },
         "second": {
           "first": {
-            "first": {
-              "first": {
-                "first": {
-                  "first": "Publish!20aqwwv",
-                  "second": "DiagnosticStatusPanel!3013pbj",
-                  "direction": "row",
-                  "splitPercentage": 8.441764292415986
-                },
-                "second": "DiagnosticStatusPanel!39lovil",
-                "direction": "column"
-              },
-              "second": "Plot!4gyf28y",
-              "direction": "column",
-              "splitPercentage": 64.29980276134121
-            },
-            "second": {
-              "first": "Plot!2juycvg",
-              "second": "Plot!46yzum",
-              "direction": "column",
-              "splitPercentage": 51.23966942148761
-            },
-            "direction": "column",
-            "splitPercentage": 58.27586206896552
-          },
-          "second": {
             "first": "DiagnosticSummary!3gy8ra6",
             "second": {
-              "first": {
-                "first": "Plot!3179n3r",
+              "first": "Indicator!3m9asr3",
+              "second": {
+                "first": "Indicator!2jw01vk",
                 "second": {
-                  "first": "Plot!4kmgb1j",
-                  "second": {
-                    "first": "Plot!46r9ua3",
-                    "second": "Plot!tptibz",
-                    "direction": "column"
-                  },
-                  "direction": "column",
-                  "splitPercentage": 32.64642113807214
+                  "first": "Indicator!111s9hq",
+                  "second": "Indicator!qggctr",
+                  "direction": "row"
                 },
-                "direction": "column",
-                "splitPercentage": 28.192771084337352
+                "direction": "row",
+                "splitPercentage": 37.74193548387096
               },
-              "second": "RawMessages!2638osp",
-              "direction": "column",
-              "splitPercentage": 65.08952120869277
+              "direction": "row",
+              "splitPercentage": 28.40646651270209
             },
             "direction": "column",
-            "splitPercentage": 28.91722168624903
+            "splitPercentage": 86.66310314522795
           },
-          "direction": "row",
-          "splitPercentage": 61.513902584668564
+          "second": {
+            "first": "Plot!3179n3r",
+            "second": {
+              "first": "Plot!4kmgb1j",
+              "second": {
+                "first": "Plot!46r9ua3",
+                "second": "Plot!tptibz",
+                "direction": "column"
+              },
+              "direction": "column",
+              "splitPercentage": 32.64642113807214
+            },
+            "direction": "column",
+            "splitPercentage": 28.192771084337352
+          },
+          "direction": "column",
+          "splitPercentage": 29.137760158572846
         },
         "direction": "row",
-        "splitPercentage": 48.366815904986396
+        "splitPercentage": 43.127394183766974
       },
-      "second": "Indicator!273cods",
-      "direction": "column",
-      "splitPercentage": 100
+      "direction": "row",
+      "splitPercentage": 48.366815904986396
     },
-    "splitPercentage": 15.302063175892473
+    "second": "Indicator!273cods",
+    "direction": "column",
+    "splitPercentage": 100
   }
 }
