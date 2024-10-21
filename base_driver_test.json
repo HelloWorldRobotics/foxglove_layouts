@@ -1064,13 +1064,13 @@
     "3D!3s9p6od": {
       "cameraState": {
         "perspective": true,
-        "distance": 7.944286369079302,
-        "phi": 0.0000573555451404618,
-        "thetaOffset": -179.89646267538524,
+        "distance": 35.1617383178344,
+        "phi": 0.00005744443898678118,
+        "thetaOffset": -179.89646267509255,
         "targetOffset": [
-          -5.6156534136196505,
-          2.6851993196599158,
-          1.4674047989869996e-14
+          2.6037114603287064,
+          -0.9379642276855059,
+          1.46740479884578e-14
         ],
         "target": [
           0,
@@ -1168,7 +1168,7 @@
       },
       "topics": {
         "/sensing/lidar/concatenated/pointcloud": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "gradient",
           "colorMap": "turbo",
@@ -1223,7 +1223,7 @@
           "colorMap": "turbo"
         },
         "/perception/obstacle_segmentation/single_frame/pointcloud": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "flat",
           "colorMap": "turbo",
@@ -1247,10 +1247,12 @@
           "visible": true
         },
         "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/debug_markers": {
-          "visible": true
+          "visible": true,
+          "color": "#03ffba45"
         },
         "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/dynamic_obstacle_stop/virtual_walls": {
-          "visible": true
+          "visible": true,
+          "color": "#1300ff45"
         },
         "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/marker": {
           "visible": true,
@@ -1279,7 +1281,7 @@
           "visible": false
         },
         "/perception/obstacle_segmentation/crop_box_filter/crop_box_polygon": {
-          "visible": true
+          "visible": false
         },
         "/perception/obstacle_segmentation/pointcloud_map_filtered/downsampled/pointcloud": {
           "visible": false,
@@ -1402,7 +1404,7 @@
           "visible": true
         },
         "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/cruise/virtual_wall": {
-          "visible": true,
+          "visible": false,
           "namespaces": {
             "slow_down_factor_text": {
               "visible": true
@@ -1754,13 +1756,13 @@
           "visible": false
         },
         "/planning/scenario_planning/lane_driving/motion_planning/path_optimizer/debug/marker": {
-          "visible": true
+          "visible": false
         },
         "/planning/scenario_planning/lane_driving/motion_planning/path_optimizer/virtual_wall": {
           "visible": false
         },
         "/planning/scenario_planning/velocity_smoother/virtual_wall": {
-          "visible": true
+          "visible": false
         },
         "/perception/occupancy_grid_map/map": {
           "visible": false
@@ -2451,22 +2453,7 @@
       "foxglovePanelTitle": "STEERING",
       "followingViewWidth": 20
     },
-    "DiagnosticSummary!3gy8ra6": {
-      "minLevel": 2,
-      "pinnedIds": [
-        "|concatenate_data_checker|concatenate_data: concat_status|",
-        "|emerge|cpu_monitor: CPU Usage|",
-        "|emerge|mem_monitor: Memory Usage|"
-      ],
-      "hardwareIdFilter": "plann",
-      "topicToRender": "/diagnostics",
-      "sortByLevel": false
-    },
-    "DiagnosticStatusPanel!3w5rzsu": {
-      "selectedHardwareId": "topic_state_monitor",
-      "selectedName": "topic_state_monitor_scenario_planning_trajectory: planning_topic_status",
-      "topicToRender": "/diagnostics"
-    },
+    "Image!1yax16h": {},
     "Indicator!3m9asr3": {
       "path": "/base_driver_debug.data[12:12]",
       "style": "background",
@@ -2763,11 +2750,7 @@
           },
           "second": {
             "first": {
-              "first": {
-                "direction": "row",
-                "second": "DiagnosticStatusPanel!3w5rzsu",
-                "first": "DiagnosticSummary!3gy8ra6"
-              },
+              "first": "Image!1yax16h",
               "second": {
                 "first": "Indicator!3m9asr3",
                 "second": {
@@ -2784,7 +2767,7 @@
                 "splitPercentage": 28.40646651270209
               },
               "direction": "column",
-              "splitPercentage": 85.08686986063701
+              "splitPercentage": 86.47389178412178
             },
             "second": {
               "first": "Plot!3179n3r",
@@ -2806,7 +2789,7 @@
             "splitPercentage": 27.808499007984484
           },
           "direction": "row",
-          "splitPercentage": 52.809413214842415
+          "splitPercentage": 35.88379632942305
         },
         "direction": "row",
         "splitPercentage": 39.60439422084402
