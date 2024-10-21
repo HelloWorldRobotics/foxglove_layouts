@@ -1,15 +1,30 @@
 {
   "configById": {
+    "RosOut!u9f5au": {
+      "searchTerms": [],
+      "minLogLevel": 3,
+      "nameFilter": {
+        "foxglove_bridge": {
+          "visible": false
+        },
+        "system.system_monitor.net_monitor": {
+          "visible": false
+        },
+        "ahrs_bringup": {
+          "visible": false
+        }
+      }
+    },
     "3D!28o2sum": {
       "cameraState": {
         "perspective": false,
-        "distance": 93.17981352692021,
+        "distance": 120.42143843413145,
         "phi": 55.176363493962846,
-        "thetaOffset": 137.5824827395521,
+        "thetaOffset": -99.85416720309769,
         "targetOffset": [
-          92.15009886419666,
-          -4.847256757350179,
-          3.7326488603217244e-14
+          -0.443362945915327,
+          3.007435197411045,
+          1.0950069258514962e-13
         ],
         "target": [
           0,
@@ -118,7 +133,15 @@
           ]
         },
         "/map/vector_map_marker": {
-          "visible": true
+          "visible": true,
+          "namespaces": {
+            "lanelet_id": {
+              "visible": false
+            },
+            "road_lanelets": {
+              "visible": false
+            }
+          }
         },
         "/map/pointcloud_map": {
           "visible": false
@@ -1036,22 +1059,23 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {},
-      "followTf": "base_link"
+      "followTf": "map"
     },
     "3D!3s9p6od": {
       "cameraState": {
-        "distance": 7.54707205065063,
         "perspective": true,
-        "phi": 55.927578605144625,
+        "distance": 7.944286369079302,
+        "phi": 0.0000573555451404618,
+        "thetaOffset": -179.89646267538524,
+        "targetOffset": [
+          -5.6156534136196505,
+          2.6851993196599158,
+          1.4674047989869996e-14
+        ],
         "target": [
           0,
           0,
           0
-        ],
-        "targetOffset": [
-          1.805747490851273,
-          0.628264965426214,
-          1.7549705725081483e-14
         ],
         "targetOrientation": [
           0,
@@ -1059,7 +1083,6 @@
           0,
           1
         ],
-        "thetaOffset": 93.43829253546424,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -1156,13 +1179,37 @@
           ]
         },
         "/map/vector_map_marker": {
-          "visible": true
+          "visible": true,
+          "namespaces": {
+            "center_lane_line": {
+              "visible": true
+            },
+            "center_line_arrows": {
+              "visible": true
+            },
+            "lane_start_bound": {
+              "visible": true
+            },
+            "lanelet_id": {
+              "visible": false
+            },
+            "left_lane_bound": {
+              "visible": true
+            },
+            "road_lanelets": {
+              "visible": false
+            },
+            "speed_bump": {
+              "visible": true
+            }
+          },
+          "showOutlines": true
         },
         "/map/pointcloud_map": {
           "visible": false
         },
         "/perception/obstacle_segmentation/pointcloud": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "flat",
           "colorMap": "turbo",
@@ -1176,10 +1223,11 @@
           "colorMap": "turbo"
         },
         "/perception/obstacle_segmentation/single_frame/pointcloud": {
-          "visible": false,
+          "visible": true,
           "colorField": "intensity",
-          "colorMode": "colormap",
-          "colorMap": "turbo"
+          "colorMode": "flat",
+          "colorMap": "turbo",
+          "flatColor": "#ff0000ff"
         },
         "/planning/debug/objects_of_interest/static_obstacle_avoidance_left": {
           "visible": false
@@ -2300,22 +2348,6 @@
       "buttonColor": "#f0ff00",
       "editingMode": false
     },
-    "Publish!20aqwwv": {
-      "buttonText": "Publish",
-      "buttonTooltip": "",
-      "advancedView": true,
-      "value": "{\n  \"layout\": {\n    \"dim\": [\n      {\n        \"label\": \"\",\n        \"size\": 4,\n        \"stride\": 4\n      }\n    ],\n    \"data_offset\": 0\n  },\n  \"data\": [\n    -0.5,\n    0.005,\n    -0.005,\n    0.5\n  ]\n}",
-      "topicName": "/set_clamp",
-      "datatype": "std_msgs/Float32MultiArray",
-      "foxglovePanelTitle": "CLAMP SETTINGS"
-    },
-    "RawMessages!2638osp": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/base_driver_debug.data[:]"
-    },
     "Plot!4gyf28y": {
       "paths": [
         {
@@ -2337,42 +2369,58 @@
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 349,
+      "sidebarDimension": 88.1014633178711,
       "foxglovePanelTitle": "VELOCITY",
       "followingViewWidth": 20
     },
-    "Plot!2juycvg": {
+    "Plot!2xkqapj": {
       "paths": [
         {
           "timestampMethod": "receiveTime",
-          "value": "/ackermann_cmd.drive.acceleration",
+          "value": "/control/trajectory_follower/longitudinal/diagnostic.data[19:19]",
           "enabled": true,
-          "color": "#4e98e2",
-          "label": "CMD",
+          "color": "#00ff16",
+          "label": "P",
           "showLine": true
         },
         {
           "timestampMethod": "receiveTime",
-          "value": "/localization/acceleration.accel.accel.linear.x",
+          "value": "/control/trajectory_follower/longitudinal/diagnostic.data[20:20]",
           "enabled": true,
-          "color": "#f5774d",
-          "label": "ACC"
+          "color": "#ff0000",
+          "label": "I"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/control/trajectory_follower/longitudinal/diagnostic.data[21:21]",
+          "enabled": true,
+          "color": "#f7df71",
+          "label": "D"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/ackermann_cmd.drive.acceleration",
+          "enabled": true,
+          "color": "#3597ec",
+          "label": "CMD"
         }
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 370,
-      "foxglovePanelTitle": "ACCEL",
-      "followingViewWidth": 20
+      "sidebarDimension": 234.89111328125,
+      "foxglovePanelTitle": "VELOCITY",
+      "followingViewWidth": 20,
+      "minYValue": -0.4,
+      "maxYValue": 0.4
     },
     "Plot!46yzum": {
       "paths": [
@@ -2395,11 +2443,11 @@
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 380.5,
+      "sidebarDimension": 119.7840576171875,
       "foxglovePanelTitle": "STEERING",
       "followingViewWidth": 20
     },
@@ -2410,9 +2458,14 @@
         "|emerge|cpu_monitor: CPU Usage|",
         "|emerge|mem_monitor: Memory Usage|"
       ],
-      "hardwareIdFilter": "",
+      "hardwareIdFilter": "plann",
       "topicToRender": "/diagnostics",
       "sortByLevel": false
+    },
+    "DiagnosticStatusPanel!3w5rzsu": {
+      "selectedHardwareId": "topic_state_monitor",
+      "selectedName": "topic_state_monitor_scenario_planning_trajectory: planning_topic_status",
+      "topicToRender": "/diagnostics"
     },
     "Indicator!3m9asr3": {
       "path": "/base_driver_debug.data[12:12]",
@@ -2495,11 +2548,11 @@
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 390.5,
+      "sidebarDimension": 140.19078063964844,
       "foxglovePanelTitle": "BASE_VALUES",
       "followingViewWidth": 20
     },
@@ -2516,11 +2569,32 @@
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 390.5,
+      "sidebarDimension": 64.05734252929688,
+      "foxglovePanelTitle": "DELTA VEL",
+      "followingViewWidth": 20
+    },
+    "Plot!kzahfr": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/base_driver_debug.data[7:7]",
+          "enabled": true,
+          "color": "#e0ff00",
+          "label": "DT"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "top",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 42.1484375,
       "foxglovePanelTitle": "DELTA VEL",
       "followingViewWidth": 20
     },
@@ -2528,7 +2602,7 @@
       "paths": [
         {
           "timestampMethod": "receiveTime",
-          "value": "/base_driver_debug.data[9:9]",
+          "value": "/base_driver_debug.data[6:6]",
           "enabled": true,
           "color": "#ff00bd",
           "label": "CMD"
@@ -2537,33 +2611,12 @@
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "top",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 390.5,
+      "sidebarDimension": 31.1939697265625,
       "foxglovePanelTitle": "SPEED CMD",
-      "followingViewWidth": 20
-    },
-    "Plot!tptibz": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/base_driver_debug.data[7:7]",
-          "enabled": true,
-          "color": "#f7df71",
-          "label": "DT"
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "left",
-      "showPlotValuesInLegend": true,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 390.5,
-      "foxglovePanelTitle": "DT",
       "followingViewWidth": 20
     },
     "Indicator!273cods": {
@@ -2618,151 +2671,150 @@
       "foxglovePanelTitle": "WAITING FOR ROUTE"
     }
   },
-  "globalVariables": {
-    "velmul": 1.8,
-    "globalVariable": 1.7
-  },
+  "globalVariables": {},
   "userNodes": {},
   "playbackConfig": {
     "speed": 1
   },
   "layout": {
-    "first": {
+    "direction": "row",
+    "first": "RosOut!u9f5au",
+    "second": {
       "first": {
         "first": {
           "first": {
-            "first": "3D!28o2sum",
-            "second": "3D!3s9p6od",
-            "direction": "column",
-            "splitPercentage": 57.395267528251225
-          },
-          "second": {
-            "first": "Indicator!dbhj64",
-            "second": {
-              "first": "Indicator!7vq6t6",
-              "second": "Indicator!4hrqyj8",
-              "direction": "row"
+            "first": {
+              "first": "3D!28o2sum",
+              "second": "3D!3s9p6od",
+              "direction": "column"
             },
-            "direction": "row",
-            "splitPercentage": 33.16435036771729
-          },
-          "direction": "column",
-          "splitPercentage": 90.91136479413477
-        },
-        "second": {
-          "first": {
-            "first": "CallService!3y7sdej",
             "second": {
-              "first": "Indicator!2odgdqt",
-              "second": "CallService!3gux8iq",
+              "first": "Indicator!dbhj64",
+              "second": {
+                "first": "Indicator!7vq6t6",
+                "second": "Indicator!4hrqyj8",
+                "direction": "row"
+              },
               "direction": "row",
-              "splitPercentage": 7.410422665208344
+              "splitPercentage": 33.16435036771729
             },
-            "direction": "column"
+            "direction": "column",
+            "splitPercentage": 89.86024144751423
           },
           "second": {
             "first": {
-              "first": "CallService!2m7mx9d",
+              "first": "CallService!3y7sdej",
               "second": {
-                "first": "Indicator!yabbxe",
-                "second": "CallService!2wxe2xo",
+                "first": "Indicator!2odgdqt",
+                "second": "CallService!3gux8iq",
                 "direction": "row",
-                "splitPercentage": 6.844432487613542
+                "splitPercentage": 7.410422665208344
               },
-              "direction": "column"
+              "direction": "column",
+              "splitPercentage": 56.373341960530595
             },
             "second": {
               "first": {
-                "first": "Publish!3etoyrb",
-                "second": "CallService!7et53w",
-                "direction": "row"
+                "first": "CallService!2m7mx9d",
+                "second": {
+                  "first": "Indicator!yabbxe",
+                  "second": "CallService!2wxe2xo",
+                  "direction": "row",
+                  "splitPercentage": 6.844432487613542
+                },
+                "direction": "column",
+                "splitPercentage": 56.373341960530595
               },
               "second": {
-                "first": "Indicator!1b8v1kz",
-                "second": "CallService!20iaugd",
-                "direction": "row",
-                "splitPercentage": 4.907159573330879
+                "first": {
+                  "first": "Publish!3etoyrb",
+                  "second": "CallService!7et53w",
+                  "direction": "row"
+                },
+                "second": {
+                  "first": "Indicator!1b8v1kz",
+                  "second": "CallService!20iaugd",
+                  "direction": "row",
+                  "splitPercentage": 4.907159573330879
+                },
+                "direction": "column",
+                "splitPercentage": 55.90423811064383
               },
-              "direction": "column"
+              "direction": "row",
+              "splitPercentage": 49.322607959356475
             },
             "direction": "row",
-            "splitPercentage": 49.322607959356475
-          },
-          "direction": "row",
-          "splitPercentage": 32.362419320938116
-        },
-        "direction": "column",
-        "splitPercentage": 74.71264367816092
-      },
-      "second": {
-        "first": {
-          "first": {
-            "first": {
-              "first": "Publish!20aqwwv",
-              "second": "RawMessages!2638osp",
-              "direction": "column",
-              "splitPercentage": 38.45388903402488
-            },
-            "second": "Plot!4gyf28y",
-            "direction": "column",
-            "splitPercentage": 64.29980276134121
-          },
-          "second": {
-            "first": "Plot!2juycvg",
-            "second": "Plot!46yzum",
-            "direction": "column",
-            "splitPercentage": 51.23966942148761
+            "splitPercentage": 32.362419320938116
           },
           "direction": "column",
-          "splitPercentage": 58.27586206896552
+          "splitPercentage": 80.74162345946011
         },
         "second": {
           "first": {
-            "first": "DiagnosticSummary!3gy8ra6",
+            "first": "Plot!4gyf28y",
             "second": {
-              "first": "Indicator!3m9asr3",
-              "second": {
-                "first": "Indicator!2jw01vk",
-                "second": {
-                  "first": "Indicator!111s9hq",
-                  "second": "Indicator!qggctr",
-                  "direction": "row"
-                },
-                "direction": "row",
-                "splitPercentage": 37.74193548387096
-              },
-              "direction": "row",
-              "splitPercentage": 28.40646651270209
+              "first": "Plot!2xkqapj",
+              "second": "Plot!46yzum",
+              "direction": "column",
+              "splitPercentage": 51.23966942148761
             },
             "direction": "column",
-            "splitPercentage": 86.66310314522795
+            "splitPercentage": 33.41118569742325
           },
           "second": {
-            "first": "Plot!3179n3r",
-            "second": {
-              "first": "Plot!4kmgb1j",
+            "first": {
+              "first": {
+                "direction": "row",
+                "second": "DiagnosticStatusPanel!3w5rzsu",
+                "first": "DiagnosticSummary!3gy8ra6"
+              },
               "second": {
-                "first": "Plot!46r9ua3",
-                "second": "Plot!tptibz",
-                "direction": "column"
+                "first": "Indicator!3m9asr3",
+                "second": {
+                  "first": "Indicator!2jw01vk",
+                  "second": {
+                    "first": "Indicator!111s9hq",
+                    "second": "Indicator!qggctr",
+                    "direction": "row"
+                  },
+                  "direction": "row",
+                  "splitPercentage": 37.74193548387096
+                },
+                "direction": "row",
+                "splitPercentage": 28.40646651270209
               },
               "direction": "column",
-              "splitPercentage": 32.64642113807214
+              "splitPercentage": 85.08686986063701
+            },
+            "second": {
+              "first": "Plot!3179n3r",
+              "second": {
+                "first": "Plot!4kmgb1j",
+                "second": {
+                  "first": "Plot!kzahfr",
+                  "second": "Plot!46r9ua3",
+                  "direction": "column",
+                  "splitPercentage": 46.115688280628795
+                },
+                "direction": "column",
+                "splitPercentage": 35.67686593375477
+              },
+              "direction": "column",
+              "splitPercentage": 28.192771084337352
             },
             "direction": "column",
-            "splitPercentage": 28.192771084337352
+            "splitPercentage": 27.808499007984484
           },
-          "direction": "column",
-          "splitPercentage": 29.137760158572846
+          "direction": "row",
+          "splitPercentage": 52.809413214842415
         },
         "direction": "row",
-        "splitPercentage": 43.127394183766974
+        "splitPercentage": 39.60439422084402
       },
-      "direction": "row",
-      "splitPercentage": 48.366815904986396
+      "second": "Indicator!273cods",
+      "direction": "column",
+      "splitPercentage": 97.76277855882492
     },
-    "second": "Indicator!273cods",
-    "direction": "column",
-    "splitPercentage": 100
+    "splitPercentage": 17
   }
 }
