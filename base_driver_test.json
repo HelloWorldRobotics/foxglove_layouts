@@ -1,5 +1,13 @@
 {
   "configById": {
+    "RawMessages!2zvg693": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/git_info.data[:]",
+      "fontSize": 11
+    },
     "RosOut!u9f5au": {
       "searchTerms": [],
       "minLogLevel": 3,
@@ -18,13 +26,13 @@
     "3D!28o2sum": {
       "cameraState": {
         "perspective": false,
-        "distance": 120.42143843413145,
+        "distance": 31.733468831860076,
         "phi": 55.176363493962846,
-        "thetaOffset": -99.85416720309769,
+        "thetaOffset": -72.36525498376227,
         "targetOffset": [
-          -0.443362945915327,
-          3.007435197411045,
-          1.0950069258514962e-13
+          -3.884060741280421,
+          2.4853063034992937,
+          1.0976411970883099e-13
         ],
         "target": [
           0,
@@ -1063,19 +1071,18 @@
     },
     "3D!3s9p6od": {
       "cameraState": {
-        "perspective": true,
-        "distance": 35.1617383178344,
-        "phi": 0.00005744443898678118,
-        "thetaOffset": -179.89646267509255,
-        "targetOffset": [
-          2.6037114603287064,
-          -0.9379642276855059,
-          1.46740479884578e-14
-        ],
+        "distance": 14.701837812339258,
+        "perspective": false,
+        "phi": 24.845829899105425,
         "target": [
           0,
           0,
           0
+        ],
+        "targetOffset": [
+          -3.3991139341221577,
+          0.017852709356821577,
+          1.467081340867019e-14
         ],
         "targetOrientation": [
           0,
@@ -1083,6 +1090,7 @@
           0,
           1
         ],
+        "thetaOffset": -109.05962323481492,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -2453,7 +2461,50 @@
       "foxglovePanelTitle": "STEERING",
       "followingViewWidth": 20
     },
-    "Image!1yax16h": {},
+    "Image!1yax16h": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/buggy_cam_1"
+      }
+    },
     "Indicator!3m9asr3": {
       "path": "/base_driver_debug.data[12:12]",
       "style": "background",
@@ -2665,7 +2716,12 @@
   },
   "layout": {
     "direction": "row",
-    "first": "RosOut!u9f5au",
+    "first": {
+      "first": "RawMessages!2zvg693",
+      "second": "RosOut!u9f5au",
+      "direction": "column",
+      "splitPercentage": 13.193087212175763
+    },
     "second": {
       "first": {
         "first": {
