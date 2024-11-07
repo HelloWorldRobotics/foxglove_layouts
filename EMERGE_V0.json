@@ -3,9 +3,9 @@
     "3D!3s9p6od": {
       "cameraState": {
         "perspective": false,
-        "distance": 38.960374867244305,
+        "distance": 114.4003665118844,
         "phi": 19.61995858534823,
-        "thetaOffset": -146.06959129671316,
+        "thetaOffset": -146.06959129671344,
         "targetOffset": [
           0.1762160535106796,
           37.07998496478153,
@@ -1070,13 +1070,13 @@
     "3D!2ipvltb": {
       "cameraState": {
         "perspective": false,
-        "distance": 31.733468831713136,
+        "distance": 55.79019634949167,
         "phi": 19.61995858534823,
-        "thetaOffset": 163.20196280809395,
+        "thetaOffset": 163.20196280809407,
         "targetOffset": [
-          -15.845268645907696,
-          39.65713813365728,
-          1.1345261523778802e-13
+          -7.535933369732584,
+          12.20431790413888,
+          1.1339175523938605e-13
         ],
         "target": [
           0,
@@ -2147,19 +2147,18 @@
     },
     "3D!m23442": {
       "cameraState": {
+        "distance": 120.42143843348876,
         "perspective": false,
-        "distance": 43.34425897451525,
-        "phi": 0.00005729832627056611,
-        "thetaOffset": 66.1175229739464,
-        "targetOffset": [
-          4.1336520541643615,
-          0.4267301500683387,
-          2.41710237122735e-14
-        ],
+        "phi": 32.558196826851564,
         "target": [
           0,
           0,
           0
+        ],
+        "targetOffset": [
+          7.502249664960755,
+          -1.2751992087489188,
+          1.1865749199589605e-13
         ],
         "targetOrientation": [
           0,
@@ -2167,6 +2166,7 @@
           0,
           1
         ],
+        "thetaOffset": -139.02062558252007,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -2253,7 +2253,7 @@
       },
       "topics": {
         "/sensing/lidar/concatenated/pointcloud": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "gradient",
           "colorMap": "turbo",
@@ -2294,7 +2294,7 @@
           "visible": false
         },
         "/perception/obstacle_segmentation/pointcloud": {
-          "visible": true,
+          "visible": false,
           "colorField": "intensity",
           "colorMode": "flat",
           "colorMap": "turbo",
@@ -2387,7 +2387,15 @@
           "visible": false
         },
         "/planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/virtual_wall": {
-          "visible": true
+          "visible": true,
+          "namespaces": {
+            "stop_factor_text": {
+              "visible": true
+            },
+            "stop_virtual_wall": {
+              "visible": true
+            }
+          }
         },
         "/planning/scenario_planning/lane_driving/motion_planning/surround_obstacle_checker/virtual_wall": {
           "visible": false
@@ -3387,7 +3395,7 @@
       "foxglovePanelTitle": "TOP LIDAR"
     },
     "Indicator!3gbm9on": {
-      "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/RIGHT/pointcloud_before_sync\"}.value",
+      "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/right/pointcloud_before_sync\"}.value",
       "style": "background",
       "fallbackColor": "#ff0000",
       "fallbackLabel": "",
@@ -3400,6 +3408,22 @@
         }
       ],
       "foxglovePanelTitle": "RIGHT LIDAR"
+    },
+    "RawMessages!3ckz87b": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/diagnostics.status[:]{hardware_id==\"emerge\"}{name==\"cpu_monitor: CPU Usage\"}.values[:]{key==\"CPU all: total\"}.value",
+      "fontSize": 16
+    },
+    "RawMessages!dq06wm": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/diagnostics.status[:]{hardware_id==\"emerge\"}{name==\"gpu_monitor: GPU Usage\"}.values[:]{key==\"GPU 0: usage\"}.value",
+      "fontSize": 16
     },
     "RosOut!u9f5au": {
       "searchTerms": [],
@@ -3416,6 +3440,18 @@
         },
         "system.mrm_handler": {
           "visible": true
+        },
+        "buggy_odom_node": {
+          "visible": false
+        },
+        "sensing.lidar.concatenate_data": {
+          "visible": false
+        },
+        "planning.scenario_planning.lane_driving.motion_planning.obstacle_cruise_planner": {
+          "visible": false
+        },
+        "foxglove_bridge_component_manager": {
+          "visible": false
         }
       }
     },
@@ -3425,11 +3461,6 @@
           "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_cruise\"}.values[:]{key==\"decision\"}.value",
           "timestampMethod": "receiveTime",
           "label": "OCP_CRSE"
-        },
-        {
-          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_slow_down\"}.values[:]{key==\"decision\"}.value",
-          "timestampMethod": "receiveTime",
-          "label": "OCP_SD"
         },
         {
           "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_stop\"}.values[:]{key==\"decision\"}.value",
@@ -3450,6 +3481,11 @@
           "value": "/diagnostics.status[:]{hardware_id==\"topic_state_monitor\"}{name==\"topic_state_monitor_scenario_planning_trajectory: planning_topic_status\"}.message",
           "timestampMethod": "receiveTime",
           "label": "TRAJ_TOP"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"topic_state_monitor\"}{name==\"topic_state_monitor_obstacle_segmentation_pointcloud: perception_topic_status\"}.message",
+          "timestampMethod": "receiveTime",
+          "label": "SEG_TOP"
         }
       ],
       "isSynced": true,
@@ -3907,20 +3943,28 @@
         "splitPercentage": 36.12619030279999
       },
       "second": {
-        "first": "RosOut!u9f5au",
-        "second": "StateTransitions!46guvc5",
+        "first": {
+          "first": "RawMessages!3ckz87b",
+          "second": "RawMessages!dq06wm",
+          "direction": "row"
+        },
+        "second": {
+          "first": "RosOut!u9f5au",
+          "second": "StateTransitions!46guvc5",
+          "direction": "column"
+        },
         "direction": "column",
-        "splitPercentage": 41.683590959802096
+        "splitPercentage": 9.607495671714014
       },
       "direction": "column",
-      "splitPercentage": 4.723506631425193
+      "splitPercentage": 4.054054054054054
     },
     "second": {
       "first": {
         "first": "Plot!4gyf28y",
         "second": "Image!1yax16h",
         "direction": "row",
-        "splitPercentage": 85.3861629546298
+        "splitPercentage": 72.34818768551034
       },
       "second": {
         "direction": "row",
@@ -3947,7 +3991,7 @@
                   "direction": "row"
                 },
                 "direction": "column",
-                "splitPercentage": 53.19012552703447
+                "splitPercentage": 54.93827160493827
               },
               "second": {
                 "first": {
@@ -3969,10 +4013,10 @@
                 "splitPercentage": 45.84153822087206
               },
               "direction": "column",
-              "splitPercentage": 57.21460817453098
+              "splitPercentage": 49.1087098765009
             },
             "direction": "column",
-            "splitPercentage": 40.308002317205776
+            "splitPercentage": 33.08949816926817
           },
           "second": {
             "first": {
@@ -4005,11 +4049,11 @@
           },
           "splitPercentage": 50.70316369783515
         },
-        "splitPercentage": 61.11359723935974
+        "splitPercentage": 46.43145235062586
       },
       "direction": "column",
       "splitPercentage": 19.49542425564825
     },
-    "splitPercentage": 21.30603176881045
+    "splitPercentage": 26.300595365394162
   }
 }
