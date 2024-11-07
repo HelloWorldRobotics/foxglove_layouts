@@ -1070,13 +1070,13 @@
     "3D!2ipvltb": {
       "cameraState": {
         "perspective": false,
-        "distance": 22.160664819614475,
+        "distance": 31.733468831713136,
         "phi": 19.61995858534823,
-        "thetaOffset": -140.68984945738467,
+        "thetaOffset": 163.20196280809395,
         "targetOffset": [
-          3.3306231163966395,
-          16.571910397268354,
-          1.1341051183904075e-13
+          -15.845268645907696,
+          39.65713813365728,
+          1.1345261523778802e-13
         ],
         "target": [
           0,
@@ -2147,14 +2147,14 @@
     },
     "3D!m23442": {
       "cameraState": {
-        "perspective": true,
-        "distance": 45.62553576356186,
-        "phi": 56.067595173116274,
-        "thetaOffset": -164.86341150484958,
+        "perspective": false,
+        "distance": 43.34425897451525,
+        "phi": 0.00005729832627056611,
+        "thetaOffset": 66.1175229739464,
         "targetOffset": [
-          -3.3260715672463603,
-          -2.6555179140088527,
-          1.7206457040825398e-14
+          4.1336520541643615,
+          0.4267301500683387,
+          2.41710237122735e-14
         ],
         "target": [
           0,
@@ -2321,7 +2321,7 @@
           "visible": true
         },
         "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/info/static_obstacle_avoidance": {
-          "visible": false,
+          "visible": true,
           "namespaces": {
             "unavoidable_target_objects_info": {
               "visible": false
@@ -2334,6 +2334,24 @@
             },
             "avoidable_target_objects_overhang_lanelet": {
               "visible": false
+            },
+            "unavoidable_target_objects_to_drivable_bound": {
+              "visible": false
+            },
+            "unavoidable_target_objects_envelope_polygon": {
+              "visible": true
+            },
+            "unavoidable_target_objects_cube": {
+              "visible": false
+            },
+            "avoidable_target_objects_info": {
+              "visible": false
+            },
+            "avoidable_target_objects_to_drivable_bound": {
+              "visible": false
+            },
+            "stop_target": {
+              "visible": true
             }
           }
         },
@@ -2375,7 +2393,7 @@
           "visible": false
         },
         "/perception/obstacle_segmentation/crop_box_filter/crop_box_polygon": {
-          "visible": true
+          "visible": false
         },
         "/perception/obstacle_segmentation/pointcloud_map_filtered/downsampled/pointcloud": {
           "visible": false,
@@ -2445,10 +2463,10 @@
           }
         },
         "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/static_obstacle_avoidance": {
-          "visible": false,
+          "visible": true,
           "namespaces": {
             "others_moving_object_cube": {
-              "visible": true
+              "visible": false
             },
             "others_moving_object_info": {
               "visible": false
@@ -2460,7 +2478,7 @@
               "visible": false
             },
             "others_out_of_target_area_cube": {
-              "visible": true
+              "visible": false
             },
             "others_moving_object_overhang_lanelet": {
               "visible": true
@@ -2554,6 +2572,9 @@
             },
             "drivable_bound_left": {
               "visible": true
+            },
+            "others_ambiguous_stopped_vehicle_cube": {
+              "visible": false
             }
           }
         },
@@ -2817,7 +2838,7 @@
           "visible": true
         },
         "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/virtual_wall/side_shift": {
-          "visible": false
+          "visible": true
         },
         "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/virtual_wall/start_planner": {
           "visible": true
@@ -2919,7 +2940,7 @@
               "visible": false
             }
           },
-          "color": "#ffffffff"
+          "color": "#b2ff00ff"
         },
         "/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner/obstacle_velocity_limiter/virtual_walls": {
           "visible": true
@@ -2934,7 +2955,7 @@
           "visible": false
         },
         "/planning/scenario_planning/lane_driving/motion_planning/path_optimizer/virtual_wall": {
-          "visible": false
+          "visible": true
         },
         "/planning/scenario_planning/velocity_smoother/virtual_wall": {
           "visible": true
@@ -3163,7 +3184,7 @@
           "visible": false
         },
         "/sensing/lidar/top/crop_box_filter_self/crop_box_polygon": {
-          "visible": false
+          "visible": true
         },
         "/initialpose": {
           "visible": false
@@ -3190,7 +3211,13 @@
           "visible": false
         },
         "/localization/pose_twist_fusion_filter/pose": {
-          "visible": true
+          "visible": false,
+          "type": "axis",
+          "arrowScale": [
+            1.783,
+            0.15,
+            0.15
+          ]
         },
         "/localization/pose_twist_fusion_filter/pose_instability_detector/debug/diff_pose": {
           "visible": false
@@ -3266,9 +3293,16 @@
         },
         "/perception/object_recognition/detection/objects": {
           "visible": true,
-          "showOutlines": true
+          "showOutlines": true,
+          "color": "#e8ffc026"
         },
         "/buggy_cam_1": {
+          "visible": true
+        },
+        "/perception/object_recognition/objects": {
+          "visible": true
+        },
+        "/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/virtual_wall/dynamic_obstacle_avoidance": {
           "visible": true
         }
       },
@@ -3322,6 +3356,105 @@
       },
       "imageMode": {}
     },
+    "Indicator!c0mt1z": {
+      "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/left/pointcloud_before_sync\"}.value",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "OK",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "LEFT LIDAR"
+    },
+    "Indicator!24re70o": {
+      "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/top/pointcloud_before_sync\"}.value",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "OK",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "TOP LIDAR"
+    },
+    "Indicator!3gbm9on": {
+      "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/RIGHT/pointcloud_before_sync\"}.value",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "OK",
+          "color": "#68e24a",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "RIGHT LIDAR"
+    },
+    "RosOut!u9f5au": {
+      "searchTerms": [],
+      "minLogLevel": 2,
+      "nameFilter": {
+        "foxglove_bridge": {
+          "visible": false
+        },
+        "system.system_monitor.net_monitor": {
+          "visible": false
+        },
+        "ahrs_bringup": {
+          "visible": false
+        },
+        "system.mrm_handler": {
+          "visible": true
+        }
+      }
+    },
+    "StateTransitions!46guvc5": {
+      "paths": [
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_cruise\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OCP_CRSE"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_slow_down\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OCP_SD"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_stop\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OCP_STP"
+        },
+        {
+          "value": "/api/fail_safe/mrm_state.state",
+          "timestampMethod": "receiveTime",
+          "label": "MRM"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"autoware::motion_velocity_planner::ObstacleVelocityLimiterModule.slow_down\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OVL_SD"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"topic_state_monitor\"}{name==\"topic_state_monitor_scenario_planning_trajectory: planning_topic_status\"}.message",
+          "timestampMethod": "receiveTime",
+          "label": "TRAJ_TOP"
+        }
+      ],
+      "isSynced": true,
+      "showPoints": false
+    },
     "Plot!4gyf28y": {
       "paths": [
         {
@@ -3344,39 +3477,12 @@
       "showXAxisLabels": false,
       "showYAxisLabels": true,
       "showLegend": true,
-      "legendDisplay": "left",
+      "legendDisplay": "none",
       "showPlotValuesInLegend": true,
       "isSynced": true,
       "xAxisVal": "timestamp",
-      "sidebarDimension": 139.22225189208984,
+      "sidebarDimension": 159.75241088867188,
       "foxglovePanelTitle": "VELOCITY"
-    },
-    "StateTransitions!10xgi9i": {
-      "paths": [
-        {
-          "value": "/api/fail_safe/mrm_state.state",
-          "timestampMethod": "receiveTime",
-          "label": "MRM"
-        }
-      ],
-      "isSynced": true
-    },
-    "Tab!29fq76v": {
-      "activeTabIdx": 2,
-      "tabs": [
-        {
-          "title": "POSE ESTIMATE",
-          "layout": "3D!3s9p6od"
-        },
-        {
-          "title": "GIVE GOAL",
-          "layout": "3D!2ipvltb"
-        },
-        {
-          "title": "VIEW",
-          "layout": "3D!m23442"
-        }
-      ]
     },
     "Image!1yax16h": {
       "cameraState": {
@@ -3422,6 +3528,23 @@
         "imageTopic": "/buggy_cam_1"
       }
     },
+    "Tab!29fq76v": {
+      "activeTabIdx": 2,
+      "tabs": [
+        {
+          "title": "POSE ESTIMATE",
+          "layout": "3D!3s9p6od"
+        },
+        {
+          "title": "GIVE GOAL",
+          "layout": "3D!2ipvltb"
+        },
+        {
+          "title": "VIEW",
+          "layout": "3D!m23442"
+        }
+      ]
+    },
     "RawMessages!2zvg693": {
       "diffEnabled": false,
       "diffMethod": "custom",
@@ -3429,24 +3552,6 @@
       "showFullMessageForDiff": false,
       "topicPath": "/git_info.data",
       "fontSize": 11
-    },
-    "RosOut!u9f5au": {
-      "searchTerms": [],
-      "minLogLevel": 2,
-      "nameFilter": {
-        "foxglove_bridge": {
-          "visible": false
-        },
-        "system.system_monitor.net_monitor": {
-          "visible": false
-        },
-        "ahrs_bringup": {
-          "visible": false
-        },
-        "system.mrm_handler": {
-          "visible": true
-        }
-      }
     },
     "Indicator!dbhj64": {
       "path": "/autoware/state.state",
@@ -3789,107 +3894,122 @@
     "speed": 1
   },
   "layout": {
+    "direction": "row",
     "first": {
-      "first": "Plot!4gyf28y",
-      "second": "StateTransitions!10xgi9i",
-      "direction": "row"
+      "first": {
+        "first": "Indicator!c0mt1z",
+        "second": {
+          "first": "Indicator!24re70o",
+          "second": "Indicator!3gbm9on",
+          "direction": "row"
+        },
+        "direction": "row",
+        "splitPercentage": 36.12619030279999
+      },
+      "second": {
+        "first": "RosOut!u9f5au",
+        "second": "StateTransitions!46guvc5",
+        "direction": "column",
+        "splitPercentage": 41.683590959802096
+      },
+      "direction": "column",
+      "splitPercentage": 4.723506631425193
     },
     "second": {
-      "direction": "row",
-      "first": "Tab!29fq76v",
+      "first": {
+        "first": "Plot!4gyf28y",
+        "second": "Image!1yax16h",
+        "direction": "row",
+        "splitPercentage": 85.3861629546298
+      },
       "second": {
         "direction": "row",
-        "first": {
+        "first": "Tab!29fq76v",
+        "second": {
+          "direction": "row",
           "first": {
-            "first": {
-              "first": "Image!1yax16h",
-              "second": "RawMessages!2zvg693",
+            "first": "RawMessages!2zvg693",
+            "second": {
+              "first": {
+                "first": {
+                  "first": "Indicator!dbhj64",
+                  "second": {
+                    "first": "Indicator!7vq6t6",
+                    "second": "Indicator!4hrqyj8",
+                    "direction": "row"
+                  },
+                  "direction": "row",
+                  "splitPercentage": 54.09864950159867
+                },
+                "second": {
+                  "first": "Publish!3etoyrb",
+                  "second": "CallService!7et53w",
+                  "direction": "row"
+                },
+                "direction": "column",
+                "splitPercentage": 53.19012552703447
+              },
+              "second": {
+                "first": {
+                  "first": "CallService!3y7sdej",
+                  "second": "CallService!2m7mx9d",
+                  "direction": "row"
+                },
+                "second": {
+                  "first": "CallService!3gux8iq",
+                  "second": {
+                    "first": "CallService!2wxe2xo",
+                    "second": "CallService!20iaugd",
+                    "direction": "row"
+                  },
+                  "direction": "row",
+                  "splitPercentage": 38.51092947316196
+                },
+                "direction": "column",
+                "splitPercentage": 45.84153822087206
+              },
               "direction": "column",
-              "splitPercentage": 66.48676079423498
+              "splitPercentage": 57.21460817453098
             },
-            "second": "RosOut!u9f5au",
             "direction": "column",
-            "splitPercentage": 68.20793799294238
+            "splitPercentage": 40.308002317205776
           },
           "second": {
             "first": {
-              "first": {
-                "first": "Indicator!dbhj64",
+              "first": "Indicator!3m9asr3",
+              "second": {
+                "first": "Indicator!2jw01vk",
                 "second": {
-                  "first": "Indicator!7vq6t6",
-                  "second": "Indicator!4hrqyj8",
+                  "first": "Indicator!111s9hq",
+                  "second": "Indicator!qggctr",
                   "direction": "row"
                 },
                 "direction": "row",
-                "splitPercentage": 54.09864950159867
-              },
-              "second": {
-                "first": "Publish!3etoyrb",
-                "second": "CallService!7et53w",
-                "direction": "row"
-              },
-              "direction": "column",
-              "splitPercentage": 53.19012552703447
-            },
-            "second": {
-              "first": {
-                "first": "CallService!3y7sdej",
-                "second": "CallService!2m7mx9d",
-                "direction": "row"
-              },
-              "second": {
-                "first": "CallService!3gux8iq",
-                "second": {
-                  "first": "CallService!2wxe2xo",
-                  "second": "CallService!20iaugd",
-                  "direction": "row"
-                },
-                "direction": "row",
-                "splitPercentage": 38.51092947316196
-              },
-              "direction": "column",
-              "splitPercentage": 45.84153822087206
-            },
-            "direction": "column",
-            "splitPercentage": 48.9664212180348
-          },
-          "direction": "column",
-          "splitPercentage": 62.28082938738414
-        },
-        "second": {
-          "first": {
-            "first": "Indicator!3m9asr3",
-            "second": {
-              "first": "Indicator!2jw01vk",
-              "second": {
-                "first": "Indicator!111s9hq",
-                "second": "Indicator!qggctr",
-                "direction": "row"
+                "splitPercentage": 37.85516356253137
               },
               "direction": "row",
-              "splitPercentage": 37.85516356253137
+              "splitPercentage": 20.948834439970366
             },
-            "direction": "row",
-            "splitPercentage": 20.948834439970366
-          },
-          "second": {
-            "first": "Plot!2xkqapj",
             "second": {
-              "first": "Plot!46yzum",
-              "second": "Plot!46r9ua3",
-              "direction": "row"
+              "first": "Plot!2xkqapj",
+              "second": {
+                "first": "Plot!46yzum",
+                "second": "Plot!46r9ua3",
+                "direction": "row"
+              },
+              "direction": "column",
+              "splitPercentage": 64.47342622989224
             },
             "direction": "column",
-            "splitPercentage": 64.47342622989224
+            "splitPercentage": 7.513143510421825
           },
-          "direction": "column",
-          "splitPercentage": 4.3130714092334035
+          "splitPercentage": 50.70316369783515
         },
-        "splitPercentage": 50.70316369783515
+        "splitPercentage": 61.11359723935974
       },
-      "splitPercentage": 64.7567824920892
+      "direction": "column",
+      "splitPercentage": 19.49542425564825
     },
-    "direction": "column",
-    "splitPercentage": 21.10612095224476
+    "splitPercentage": 21.30603176881045
   }
 }
