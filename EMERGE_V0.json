@@ -1070,13 +1070,13 @@
     "3D!2ipvltb": {
       "cameraState": {
         "perspective": false,
-        "distance": 55.79019634949167,
+        "distance": 15.475618749768218,
         "phi": 19.61995858534823,
-        "thetaOffset": 163.20196280809407,
+        "thetaOffset": -173.58297044945888,
         "targetOffset": [
-          -7.535933369732584,
-          12.20431790413888,
-          1.1339175523938605e-13
+          -4.187375180554743,
+          15.422681099295907,
+          1.1339344490239934e-13
         ],
         "target": [
           0,
@@ -2147,18 +2147,18 @@
     },
     "3D!m23442": {
       "cameraState": {
-        "distance": 120.42143843348876,
-        "perspective": false,
-        "phi": 32.558196826851564,
+        "distance": 41.01092091255003,
+        "perspective": true,
+        "phi": 28.789430535478335,
         "target": [
           0,
           0,
           0
         ],
         "targetOffset": [
-          7.502249664960755,
-          -1.2751992087489188,
-          1.1865749199589605e-13
+          4.869688544498935,
+          2.257308863609784,
+          1.1934830010744873e-13
         ],
         "targetOrientation": [
           0,
@@ -2166,7 +2166,7 @@
           0,
           1
         ],
-        "thetaOffset": -139.02062558252007,
+        "thetaOffset": 127.28730879176226,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -2253,15 +2253,16 @@
       },
       "topics": {
         "/sensing/lidar/concatenated/pointcloud": {
-          "visible": false,
+          "visible": true,
           "colorField": "intensity",
           "colorMode": "gradient",
           "colorMap": "turbo",
-          "pointSize": 1,
+          "pointSize": 4.71,
           "gradient": [
-            "#2f4e69ff",
-            "#00fd3cff"
-          ]
+            "#ffffff08",
+            "#ffffffff"
+          ],
+          "flatColor": "#ffffff29"
         },
         "/map/vector_map_marker": {
           "visible": true,
@@ -2294,12 +2295,12 @@
           "visible": false
         },
         "/perception/obstacle_segmentation/pointcloud": {
-          "visible": false,
+          "visible": true,
           "colorField": "intensity",
           "colorMode": "flat",
           "colorMap": "turbo",
-          "pointSize": 2.5,
-          "flatColor": "#ff0000ff"
+          "pointSize": 4.61,
+          "flatColor": "#ffc300ff"
         },
         "/perception/obstacle_segmentation/range_cropped/pointcloud": {
           "visible": false,
@@ -2513,7 +2514,7 @@
               "visible": false
             },
             "step2_merged_shift_line": {
-              "visible": false
+              "visible": true
             },
             "step3_grad_filtered_1st": {
               "visible": false
@@ -2528,7 +2529,7 @@
               "visible": false
             },
             "step4_old_shift_line": {
-              "visible": false
+              "visible": true
             },
             "others_unstable_object_overhang_lanelet": {
               "visible": false
@@ -2582,6 +2583,9 @@
               "visible": true
             },
             "others_ambiguous_stopped_vehicle_cube": {
+              "visible": false
+            },
+            "others_too_near_to_goal_cube": {
               "visible": false
             }
           }
@@ -3337,12 +3341,12 @@
           "lineWidth": 0.4
         },
         "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc": {
-          "visible": false,
+          "visible": true,
           "frameLocked": true,
           "label": "URDF",
           "instanceId": "de2d245c-24f5-4e17-b8c9-ff9ee4e5fcdc",
           "layerId": "foxglove.Urdf",
-          "sourceType": "topic",
+          "sourceType": "filePath",
           "url": "package://buggy_vehicle_description/urdf/vehicle.urdf",
           "filePath": "/home/zawl/autoware.buggy/src/vehicle/buggy_vehicle_launch/buggy_vehicle_description/urdf/vehicle.urdf",
           "parameter": "",
@@ -3377,7 +3381,8 @@
           "label": ""
         }
       ],
-      "foxglovePanelTitle": "LEFT LIDAR"
+      "foxglovePanelTitle": "LEFT LIDAR",
+      "fontSize": 36
     },
     "Indicator!24re70o": {
       "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/top/pointcloud_before_sync\"}.value",
@@ -3392,7 +3397,8 @@
           "label": ""
         }
       ],
-      "foxglovePanelTitle": "TOP LIDAR"
+      "foxglovePanelTitle": "TOP LIDAR",
+      "fontSize": 36
     },
     "Indicator!3gbm9on": {
       "path": "/diagnostics.status[:]{hardware_id==\"concatenate_data_checker\"}{name==\"concatenate_data: concat_status\"}.values[:]{key==\"/sensing/lidar/right/pointcloud_before_sync\"}.value",
@@ -3407,7 +3413,8 @@
           "label": ""
         }
       ],
-      "foxglovePanelTitle": "RIGHT LIDAR"
+      "foxglovePanelTitle": "RIGHT LIDAR",
+      "fontSize": 36
     },
     "RawMessages!3ckz87b": {
       "diffEnabled": false,
@@ -3463,19 +3470,19 @@
           "label": "OCP_CRSE"
         },
         {
-          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_stop\"}.values[:]{key==\"decision\"}.value",
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_cruise\"}.values[:]{key==\"decision\"}.value",
           "timestampMethod": "receiveTime",
-          "label": "OCP_STP"
+          "label": "OCP_CRSE"
         },
         {
-          "value": "/api/fail_safe/mrm_state.state",
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"obstacle_cruise_planner_slow_down\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OCP_S"
+        },
+        {
+          "value": "/mrm_converted.state",
           "timestampMethod": "receiveTime",
           "label": "MRM"
-        },
-        {
-          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"autoware::motion_velocity_planner::ObstacleVelocityLimiterModule.slow_down\"}.values[:]{key==\"decision\"}.value",
-          "timestampMethod": "receiveTime",
-          "label": "OVL_SD"
         },
         {
           "value": "/diagnostics.status[:]{hardware_id==\"topic_state_monitor\"}{name==\"topic_state_monitor_scenario_planning_trajectory: planning_topic_status\"}.message",
@@ -3486,6 +3493,11 @@
           "value": "/diagnostics.status[:]{hardware_id==\"topic_state_monitor\"}{name==\"topic_state_monitor_obstacle_segmentation_pointcloud: perception_topic_status\"}.message",
           "timestampMethod": "receiveTime",
           "label": "SEG_TOP"
+        },
+        {
+          "value": "/diagnostics.status[:]{hardware_id==\"\"}{name==\"autoware::motion_velocity_planner::ObstacleVelocityLimiterModule.slow_down\"}.values[:]{key==\"decision\"}.value",
+          "timestampMethod": "receiveTime",
+          "label": "OVL_SD"
         }
       ],
       "isSynced": true,
@@ -3638,7 +3650,8 @@
           "label": "FINALIZING"
         }
       ],
-      "foxglovePanelTitle": "AW STATE"
+      "foxglovePanelTitle": "AW STATE",
+      "fontSize": 36
     },
     "Indicator!7vq6t6": {
       "path": "/api/operation_mode/state.mode",
@@ -3671,7 +3684,8 @@
           "label": "RMT"
         }
       ],
-      "foxglovePanelTitle": "OP MODE"
+      "foxglovePanelTitle": "OP MODE",
+      "fontSize": 36
     },
     "Indicator!4hrqyj8": {
       "path": "/driver_status.data",
@@ -3698,7 +3712,8 @@
           "label": "REMOTE"
         }
       ],
-      "foxglovePanelTitle": "DRIVER STATE"
+      "foxglovePanelTitle": "DRIVER STATE",
+      "fontSize": 36
     },
     "Publish!3etoyrb": {
       "buttonText": "INIT LOBBY",
@@ -3781,7 +3796,8 @@
           "label": ""
         }
       ],
-      "foxglovePanelTitle": "DT CLMP F"
+      "foxglovePanelTitle": "DT CLMP F",
+      "fontSize": 36
     },
     "Indicator!2jw01vk": {
       "path": "/base_driver_debug.data[13:13]",
@@ -3796,7 +3812,8 @@
           "label": ""
         }
       ],
-      "foxglovePanelTitle": "DT CLMP B"
+      "foxglovePanelTitle": "DT CLMP B",
+      "fontSize": 36
     },
     "Indicator!111s9hq": {
       "path": "/base_driver_debug.data[14:14]",
@@ -3811,7 +3828,8 @@
           "label": "MANUAL"
         }
       ],
-      "foxglovePanelTitle": "VX LIMIT"
+      "foxglovePanelTitle": "VX LIMIT",
+      "fontSize": 36
     },
     "Indicator!qggctr": {
       "path": "/base_driver_debug.data[15:15]",
@@ -3826,7 +3844,8 @@
           "label": "MANUAL"
         }
       ],
-      "foxglovePanelTitle": "FLIP STOP"
+      "foxglovePanelTitle": "FLIP STOP",
+      "fontSize": 36
     },
     "Plot!2xkqapj": {
       "paths": [
@@ -3925,7 +3944,12 @@
     }
   },
   "globalVariables": {},
-  "userNodes": {},
+  "userNodes": {
+    "8ea126e5-0db9-4bd6-8f71-1640f78fddb2": {
+      "sourceCode": "import { Input, Message } from \"./types\";\n\ntype Output = {\n  state: string;\n};\n\nexport const inputs = [\"/api/fail_safe/mrm_state\"];\nexport const output = \"/mrm_converted\";\n\n// Script to convert MRM state messages\nexport default function script(\n  event: Input<\"/api/fail_safe/mrm_state\">,\n): Output {\n  const msg = event.message;\n\n  // Convert state number to name\n  let stateName;\n  switch (msg.state) {\n    case 0:\n      stateName = \"unkown\";\n      break;\n    case 1:\n      stateName = \"NORMAL\";\n      break;\n    case 2:\n      stateName = \"ENGAGED\";\n      break;\n    case 3:\n      stateName = \"SUCCESS\";\n      break;\n    case 4:\n      stateName = \"fail\";\n      break;\n    default:\n      stateName = \"invalid\";\n  }\n\n  return {\n    state: stateName, // Changed from 'value' to 'state' to match Output type\n  };\n}\n",
+      "name": "MRM_CONVERTER"
+    }
+  },
   "playbackConfig": {
     "speed": 1
   },
@@ -3951,10 +3975,11 @@
         "second": {
           "first": "RosOut!u9f5au",
           "second": "StateTransitions!46guvc5",
-          "direction": "column"
+          "direction": "column",
+          "splitPercentage": 26.177996224001
         },
         "direction": "column",
-        "splitPercentage": 9.607495671714014
+        "splitPercentage": 11.29832115223703
       },
       "direction": "column",
       "splitPercentage": 4.054054054054054
@@ -4016,7 +4041,7 @@
               "splitPercentage": 49.1087098765009
             },
             "direction": "column",
-            "splitPercentage": 33.08949816926817
+            "splitPercentage": 37.10775362059182
           },
           "second": {
             "first": {
@@ -4049,11 +4074,11 @@
           },
           "splitPercentage": 50.70316369783515
         },
-        "splitPercentage": 46.43145235062586
+        "splitPercentage": 64.365585465636
       },
       "direction": "column",
       "splitPercentage": 19.49542425564825
     },
-    "splitPercentage": 26.300595365394162
+    "splitPercentage": 27.098598653057426
   }
 }
